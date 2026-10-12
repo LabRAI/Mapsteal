@@ -1,0 +1,43 @@
+{
+ "note": "sha256 of the frozen benchmark panel files (not distributed). Item counts and exclusions only; no labels.",
+ "panels": {
+  "CTI-Bench": {
+   "file_name": "cyb_cti_bench.jsonl",
+   "panel_sha256": "0b7bc60b27f2948222da2a33c68bf0deafb5b1ee6d9861c37baf6e88d6bb3e60",
+   "frozen_n": 2482,
+   "excluded_item_ids": []
+  },
+  "CyberMetric": {
+   "file_name": "cyb_cybermetric.jsonl",
+   "panel_sha256": "ed1543856baa61d77e095238ec1aa1cec30be931631964a14073a1f58541eedf",
+   "frozen_n": 2499,
+   "excluded_item_ids": [
+    "cybermetric:1729"
+   ]
+  },
+  "MedMCQA": {
+   "file_name": "s2_eval_rendered_rows_v1.jsonl",
+   "panel_sha256": "14d72625e957247bd3156f89de17cb25fbaf62c556a8761335f6dc1a9c52d6d5",
+   "frozen_n": 500,
+   "excluded_item_ids": []
+  },
+  "MedQA": {
+   "file_name": "medqa_test.jsonl",
+   "panel_sha256": "cfa75cbcc53c29b023752b0a395ff49d8202121041392735ae44771a5ec734a3",
+   "frozen_n": 1273,
+   "excluded_item_ids": []
+  },
+  "MedXpertQA-Text": {
+   "file_name": "medxpertqa_text.jsonl",
+   "panel_sha256": "1866e7ff66328aede184563104c42fac2ba84dd43f56fd5696d91a62d69eb046",
+   "frozen_n": 2450,
+   "excluded_item_ids": []
+  },
+  "SecEval": {
+   "file_name": "cyb_seceval.jsonl",
+   "panel_sha256": "0049dff4e7c336f862902e21452a41adca37b6b3eac5bf1aae4a5c9f40097a9f",
+   "frozen_n": 1521,
+   "excluded_item_ids": []
+  }
+ }
+}

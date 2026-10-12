@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+.env.*
+!.env.example
+/runs/
+models/
+*.safetensors
+*.pt
+*.bin
+# generated validation reports
+/validation/VALIDATION_REPORT.md
+/validation/IMPLEMENTATION_CHECK.md
+# restricted inputs: restore locally (tools/restore_restricted.py) but never commit them (docs/RESTRICTED_INPUTS.md)
+/data/gold/
+/data/frozen_corpora/
+/data/evokd/
+/src/mapsteal/data/medicine/seed40.jsonl
+/tests/fixtures/
+/provenance/qedks_runs/*/corpus_raw.jsonl
+/provenance/evokd_runs/*/events/
+/provenance/evokd_runs/*/baseline_d0_identify.json
+/panels/
+/external/

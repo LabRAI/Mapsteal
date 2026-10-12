@@ -1,0 +1,97 @@
+{
+ "coq_min_len_words": 100,
+ "correction_rows": 149,
+ "diversification": {
+  "enabled": true,
+  "every": 25,
+  "forced_iteration_share": 0.114,
+  "forced_iterations": 40,
+  "forced_qa_rows": 56,
+  "forced_qa_share": 0.112,
+  "pending_unexecuted_targets": 0,
+  "targets_executed": 40,
+  "targets_selected": 42,
+  "targets_skipped": 2,
+  "top_n": 3,
+  "triggers": 14,
+  "triggers_skipped": 0
+ },
+ "domain": "cyber",
+ "empty_answers": 0,
+ "explored": 351,
+ "frontier_exhausted": false,
+ "iterations": 351,
+ "main_rows": 351,
+ "qa_rows": 500,
+ "queue_remaining": 766,
+ "reached_target": true,
+ "refinement": {
+  "accepted_after_retry": 201,
+  "attempts_total": 1435,
+  "entities": 1117,
+  "fallback_to_template": 21,
+  "first_attempt_accepted": 895,
+  "rejection_reasons": {
+   "contains_placeholder": 1,
+   "cross_domain_leak": 4,
+   "entity_missing": 242,
+   "instruction_echo": 7,
+   "missing_any": 23,
+   "template_collapse": 5,
+   "weak_form": 155
+  },
+  "slots_differ_from_template": 3192,
+  "slots_total": 4468
+ },
+ "resumed": true,
+ "seed": 42,
+ "stats": {
+  "correction_rows": 149,
+  "correction_triggered": 149,
+  "div_targets_executed": 40,
+  "div_targets_selected": 42,
+  "div_targets_skipped": 2,
+  "div_targets_skipped_budget": 2,
+  "div_triggers": 14,
+  "forced_iterations": 40,
+  "forced_qa_rows": 56,
+  "main_rows": 351,
+  "selected_ans_entity": 338,
+  "selected_seed": 13
+ },
+ "target_qa": 500,
+ "teacher": {
+  "cost_usd": 0.92292,
+  "input_tokens": 241616,
+  "n_requests": 851,
+  "output_tokens": 54961
+ },
+ "teacher_requests_by_kind": {
+  "correction": {
+   "cost_usd": 0.232278,
+   "input_tokens": 62351,
+   "output_tokens": 13447,
+   "requests": 149
+  },
+  "entity_extraction": {
+   "cost_usd": 0.347546,
+   "input_tokens": 140933,
+   "output_tokens": 8210,
+   "requests": 350
+  },
+  "main_qa": {
+   "cost_usd": 0.339202,
+   "input_tokens": 38137,
+   "output_tokens": 32866,
+   "requests": 351
+  },
+  "roots": {
+   "cost_usd": 0.003894,
+   "input_tokens": 195,
+   "output_tokens": 438,
+   "requests": 1
+  }
+ },
+ "unique_questions": 351,
+ "wall_seconds_this_invocation": 7090.7
+}

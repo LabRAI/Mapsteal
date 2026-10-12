@@ -1,0 +1,44 @@
+{
+ "variant": "QEDKS-Adapted",
+ "domain": "cyb",
+ "size": "4B",
+ "acquisition_seed": 44,
+ "teacher": "gpt-4.1",
+ "student": "Qwen/Qwen3.5-4B@851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "code_commit": "f84f02037655c5ed9e97ff759e299bf6547a664f",
+ "code_sha256": {
+  "qedks/trainStudentv21.py": "b1c0b676ef56c8e7a0bc374578aface694fa021214cd34baaf33b01df92114ea",
+  "qedks/src/student/askques.py": "389291d5b99fac7869bf2e2e4a81ba4a9b9e77923c7cd21551e8a803711c05aa",
+  "qedks/src/student/studentModel.py": "d6c00226835e17a872c57e4a6c3a38d074a7e95afc90356212688f0fe937d84b",
+  "qedks/src/student/fast_gen.py": "9f7d1c871cdefa3f1acd0c5636568efd7e73820e2cf744f580298f64f37e9bad",
+  "qedks/src/student/models_table.py": "6da5e2baf767aea3b2d3ebdfe5fc071b00bd2a0fe20f6944276245a4cabf6a1b",
+  "qedks/src/teacher/teacherGPT4API.py": "46f174073a17b311be8dc10624056ac50d0a789b1e7eaed277819bab5f59cfff",
+  "qedks/src/data/dataUtils.py": "782c44eaa4366a7072434c58c7e1d4d403fbe46dc21d40e5471d865c0d616fe6",
+  "qedks/src/followup/followup.py": "414151b3d1802c630ecbcf9db8165f29cfd83a4f7a228b8bc843b72289d214e0",
+  "qedks/src/coq/coq_utils.py": "eaeb21a6bb813965420c86bfebd862fe20b3ec8821eebd337d3e5879304abe0d",
+  "qedks/src/correct/untils.py": "74ef3eede84974748af497f6954b1383a2d56ef1c6dd60cb07f6ea6e87f1b357"
+ },
+ "teacher_totals": {
+  "requests": 850,
+  "input_tokens": 241390,
+  "output_tokens": 54972,
+  "cost_usd": 0.9226
+ },
+ "requests_by_kind": {
+  "roots": 1,
+  "main_qa": 350,
+  "correction": 150,
+  "entity_extraction": 349
+ },
+ "output_sha256": {
+  "corpus_raw.jsonl": "4433c001eb725e528ad9cb0100a8c2cba005cd6bd9c54ac8d32beb2f28c062cc",
+  "training_corpus.jsonl": "1931f467db53d53a5b5ae6ae46af7ff9f3d196a1675807f6740d7d28d5df33fc",
+  "teacher_ledger.jsonl": "c5525fc75ca40c4147d42895096313ca94107951861be6b59e68a6cfef514a12",
+  "structured_log.jsonl": "185c9cb56a4e9cf181dae39f20405885ebb2d16c505a4fecdfcb7693f0949e3b",
+  "diversification_log.jsonl": "936cc4ad26e898bad8200c284480b6f2bf269e9539a43dedbc7589c32c343a76",
+  "refine_log.jsonl": "62c6e631062112cd1f1f9fc23d37a48a4737cae7ab1b682e8e9e950d2a083c2d",
+  "summary.json": "bde8a3d07feaf5b644c45a8b13fad89a07f9ec17f0ffee3c3c9eb52faf629fc6",
+  "roots.json": "7b1b7371c1ce1fed28afa2cf434e24856cf9b8ebe5c554f53e9041bf67702a4c"
+ },
+ "wall_seconds": 6800.1
+}

@@ -1,0 +1,376 @@
+{
+ "note": "Text files whose environment-specific strings (home directories, user names of the research machines) were replaced by placeholders in this public copy. original_sha256 identifies the unmodified research file; the public file is a sanitized copy, not the original evidence.",
+ "replacements": [
+  "home-directory prefixes and user names of the research machines -> <HPC_HOME>/<HPC_USER>/<LOCAL_HOME>/<LOCAL_USER>",
+  "paths of the private research archive -> <research-archive>/<file name>",
+  "GPU hardware UUIDs in device-provenance records -> <gpu-uuid>",
+  "internal training-configuration identifier in MapSteal training-manifest labels (arm, config_id, label, role, source, notes) -> \"selected training configuration\" / SELCFG"
+ ],
+ "files": [
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s43/config_snapshot.json",
+   "original_sha256": "a931648079156bf87721946cda5ef371856874963a0fe5be8f43f9ada1d6c9f0",
+   "public_sha256": "1aca6077c564ef691f2cac864ca92048a542b8143330d682774728ad09adeb05"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s43/train_summary.json",
+   "original_sha256": "c4155189ebb8a408061e79d7d3760f963a2bf1cce147e95509efa7ad4a5eb429",
+   "public_sha256": "4d275b6e06dbb199d2ee24430727cdce803b9314997f189cac9e883965621f9b"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s44/config_snapshot.json",
+   "original_sha256": "29ec15ba039ff29c6863f84acd2b0f12f3db97a8832931408fca351efdd75b3f",
+   "public_sha256": "d01e87b802e2085170aadfd6080a2feb69c6aee46456ea298be15860f05b9b3a"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s44/train_summary.json",
+   "original_sha256": "9c82920008a96fff089e1bfff51a74ad5c9251eae0877860ee7350b8b314dbdd",
+   "public_sha256": "97b8b173eb0d0997923db7a5765d352d5728c12b93258131f13642f0c50b935a"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s42/config_snapshot.json",
+   "original_sha256": "ffd444ffc116676ccde209c8ba20e0894ee1f7a73469fff1e611db4bd95f1664",
+   "public_sha256": "7ae1261fb86054e784830a45e3142989085deb90d291faef7d20b30496e81acc"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s42/train_summary.json",
+   "original_sha256": "bd0c4cd4bbbd531329d240cd02030e84f14489c14988d16de7dd9244a163b4a5",
+   "public_sha256": "2d97bf2215aed913f991506a050b42ed5adb783d7e0fa9f417fd440f99940733"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s42/config_snapshot.json",
+   "original_sha256": "f01f7917f7905ab4db33d1c74abf9f5fefcb224853a55cc557426c672e148d64",
+   "public_sha256": "36a481d0a63c1b08a1a607e549753a565b5673973b26e5db63890592506b3b8e"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s42/train_summary.json",
+   "original_sha256": "16bf5f4fffd8f82a9dcd71962ce80ceea53dd6cb34f942bf4b3c49e8c8475f23",
+   "public_sha256": "97e8edcb3e5d537d98d40f9ad5441a5289a3361ebb66846aa5a11d01696b3c7a"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s44/config_snapshot.json",
+   "original_sha256": "48f5ec81084774ea5d8ce128da554b38cbdb876cf64b3b252eef26c3c19f240f",
+   "public_sha256": "8055b1231c4cb3dfc287067324b01946997ec4350e328531b46b0542a6fa59ba"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s44/train_summary.json",
+   "original_sha256": "969c07d26c151bc9df0075836e0be7a2ffd183735a6a88995d50da0bdfaf229e",
+   "public_sha256": "eaa4023752286f099558b5f602f8dd4056335037264256eed30746259329589e"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s44/config_snapshot.json",
+   "original_sha256": "17477ccce3ceb7d4cb37acc5cb27acbb58f242a7571242dace456eca4c199379",
+   "public_sha256": "52a597571e1cc2cd804e9854f7d8c7dc4faffe25482761b9d3a843da590fee0a"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s44/train_summary.json",
+   "original_sha256": "cb791a334d1711531b7d19c29a89eb33ea1fb7dc540f0702c9cbdc3cd98bb5a5",
+   "public_sha256": "263e4c76cbfe9fc884791117f8dcfda568e40121ffb4077d94b09b719a5cd0ea"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s44/config_snapshot.json",
+   "original_sha256": "4edd0211382d147de02895958c0f77dfae66be4c239577272dce4ae8cf791e33",
+   "public_sha256": "92f7e52f9049f4793b092c5fb72797531db31309fadd3fa66d6b50d355abe1cf"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s44/train_summary.json",
+   "original_sha256": "7217e3419d28090dee34f33ff31288df22eca64b524d74c3a1f223fb3b5d5e0f",
+   "public_sha256": "568af6764a6f6c2833430ac06b56709ae8c56ed01906bedfd484f0c05fd0df41"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s44/config_snapshot.json",
+   "original_sha256": "c6843b0754881fee66dac1529649668d8bfc5bff9c949437f5af0614c08590b0",
+   "public_sha256": "0c99bab4ae18ac03eb54c7c8508649f9c8aa516c18105dcbb43f9206727d7b69"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s44/train_summary.json",
+   "original_sha256": "0edd58788eba7ebc96053ecfb03d5c5f180065421705f6ba08cd8a6a05227748",
+   "public_sha256": "4de6ed6844c29441c7ae30fae42f9f35f7c4629bc230c17d9a8ce168b88320d4"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s42/config_snapshot.json",
+   "original_sha256": "ba5116162edd79b1779f2b2a5e84c5599d7fcf6dbb60086f23907ca57c6e0023",
+   "public_sha256": "1bfbbd242da6251fee9f225847047551c37e1285cbdcbc5c37469923d278d751"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s42/train_summary.json",
+   "original_sha256": "160baf17d39ebf407c1da370f8cab7574fdb8ec4c5dbe659b762f268ad75100e",
+   "public_sha256": "e608c6efcca27d903195f91f335c0cc8c79052efb241c82dc564862d7d9cc660"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s44/config_snapshot.json",
+   "original_sha256": "8e2a17bccef553727df98abd3079687086c8d78b0656a7904c6429ac22455afe",
+   "public_sha256": "f4c43ddd4436e4b94d28eeb910566231ea6fb5a2cdb4f3771b43b5d0a7874064"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s44/train_summary.json",
+   "original_sha256": "a3a25704c2a5b240b86fa83b457aa3e4c5aed6db1e91517d2cc78a30391ffc5a",
+   "public_sha256": "d9540e112c694c6634d69308fc88a7baf34256a98683ed9f6c92c9a7c708de45"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s42/config_snapshot.json",
+   "original_sha256": "aaf9a07606c3a9e219de2c8ca8848d040cfc3f9ee5251ec63e272a81226a5477",
+   "public_sha256": "e9c845378b0d0ab56e77f7e17e14a8a6fba067ccac6953d6f1e8c682361fb2ac"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s42/train_summary.json",
+   "original_sha256": "c861b97d5343a7a39632a614964f0c3032f2047923cca03988601f10e818769c",
+   "public_sha256": "114e453ad89c25779f59cd2a9e2830479ecdf9e8f7307bb489eb5dd60c7cd5e8"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s43/config_snapshot.json",
+   "original_sha256": "7517116750e8b1fafd43a60ec4287364505b4e2da17e833b594671de62ba7d8b",
+   "public_sha256": "a081dbf1581115d458389f2fe414d561416872be4f5458a3b3cbd9c59b455e1b"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_s43/train_summary.json",
+   "original_sha256": "cb44a2a963e82126ccd67daad27af8d6de4bb30f4a671a38e9b5c12482a437ab",
+   "public_sha256": "16efaaa81e9a878a9e06aeaa317eda5f40646d3299cf28bf9a9df76663a63834"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s43/config_snapshot.json",
+   "original_sha256": "0145423342709c141c7dc38f89a9e97afeac92e70d5b3a5d2d6e89dd1f080547",
+   "public_sha256": "27fd91df700e2ef42d6f2c1e3842848639f546f92fd5c796f3f5c3158f8bf9e9"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_9B_s43/train_summary.json",
+   "original_sha256": "4cddb320b2f6e9819e4a2b7e8bacb80a0020b3e2a99fc4d1603895f2250a2ad2",
+   "public_sha256": "f8cefaaf17ed016cca5c0e94f4f8c4305d8008ae340d35b719b890faf35acd05"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s43/config_snapshot.json",
+   "original_sha256": "7f3dea4f78c711d1ee06f878ff38c14de77e327e494b89acb2065fab4db6c1e5",
+   "public_sha256": "c0ba6c99ec2227dcf41a66eb65c953ef1e892217caee5dd500aeb8391263efa8"
+  },
+  {
+   "path": "provenance/evokd_runs/med_s43/train_summary.json",
+   "original_sha256": "37d3ec912e018f17941f68252011bbe614df1e8b299feeb2c2ec567d39e3ef70",
+   "public_sha256": "82249eabe8dd3845e235c0a564b9a7e865f0d2f905438d00e94a6282f63fbbe6"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s43/config_snapshot.json",
+   "original_sha256": "e74355f585689524549d3d2d44444d767e2d133fd3570820951bf27faa07faec",
+   "public_sha256": "4fbde9ba702d2e7411775f3eaf3661d2624190ea25e866b479a97a71dc3d1084"
+  },
+  {
+   "path": "provenance/evokd_runs/med_9B_s43/train_summary.json",
+   "original_sha256": "61ffb79fc91b9b4c874bb71e4f702e04758ed2de9db2cf0d8ecc771e9cfcafc1",
+   "public_sha256": "f372870c017186cf734d43a73df0058e417c4327eb6f6fd43d0aec143d008754"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s43/config_snapshot.json",
+   "original_sha256": "caa5de84951caeab63215e19f23ed53df3cf4f23d256fcc3bdf9bc050b782c94",
+   "public_sha256": "cb08c87f40228ecf62f52b01008adc1ded6be18fa5d1c18cc9aeb95cced67693"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s43/train_summary.json",
+   "original_sha256": "c11955d1a598570ab6b81d314d67707db88ebe90cf8143dcce69aa32acaa3350",
+   "public_sha256": "c57aa7e6cf6e77a6de3ff3af28e4532b52e4cbf681557e30daa05c60c6501592"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s42/config_snapshot.json",
+   "original_sha256": "069cbd76d7376b3313151f2cc0fbd9344bc7d44324336a0ec32e31586303a84a",
+   "public_sha256": "efb5b7676e6b35e3e674f2e2af6973fca1dc368e1bc1c45ccb5507cb11c9cb7f"
+  },
+  {
+   "path": "provenance/evokd_runs/med_2B_s42/train_summary.json",
+   "original_sha256": "c4a07e2ae4d62afbeaabfa2d045b0c29549835f7c7ae576288f0f4b4ef794909",
+   "public_sha256": "0c3f4350027c2e19838ad22a7afa7bcffd37cf93c23b3cc7df0c65bc11700009"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s42/config_snapshot.json",
+   "original_sha256": "5e852afdf3b4c118e1167e4a151d693a5435acc9c803bdd927a4a9ad3588ff88",
+   "public_sha256": "6fe1eed95073dfefe3fcf5779e2b295066138a4568489dde1b1ff9613bdcf04f"
+  },
+  {
+   "path": "provenance/evokd_runs/cyb_2B_s42/train_summary.json",
+   "original_sha256": "2b66ac88589eaccdfe9ce43de58e2d7ff4b3e8483d2d8f26f62601862eed19b3",
+   "public_sha256": "183d6de188ab98ca666364fb3f7775cdc011eeb796ae62138d82656f3f24f747"
+  },
+  {
+   "path": "provenance/mapsteal/medicine/corpus_manifest.json",
+   "original_sha256": "d03fcb6e0962686a58bbe5e1a564cf27c6bf4f09c03732639fbeb7b2a3e4fd39",
+   "public_sha256": "661395a9284b9ba0bb3c7739ab52fd230cee200faa3e16eb2f9b303c92bb04e9"
+  },
+  {
+   "path": "provenance/training/qedks/9B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "9bbedc8b470d4c61eed8d6d14c6e66b2b81e3babca1b16e74a12e586a95c48d2",
+   "public_sha256": "66e3db975e2c982877829ae21d78d04dd6184422db582e74d1e26f75a06915b2"
+  },
+  {
+   "path": "provenance/training/qedks/9B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "3f007531a7efd564978acce68b982699fe42a053327424b59584a639824f19f4",
+   "public_sha256": "635df34145804908e436385a71d44b0c9b0480409bc42d44fed13e11d7c310bd"
+  },
+  {
+   "path": "provenance/training/qedks/9B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "a616e92af127229bc34c21cf19a92627a07cef877191ffe815f5559685586ad3",
+   "public_sha256": "5e14732b72328212216d7a13001be278246e6e51818edc703db7d5c25c2c1ead"
+  },
+  {
+   "path": "provenance/training/qedks/9B/medicine/s42/run_manifest.json",
+   "original_sha256": "ea653d9ab7c3f2c61c438f3e51e38d70f43492e7a33bb39d331fb2014bc7d27d",
+   "public_sha256": "7ef5bb06b517beb8785737f9d428efaa6cfe61f44927c77673e48a0515dc3d3f"
+  },
+  {
+   "path": "provenance/training/qedks/9B/medicine/s43/run_manifest.json",
+   "original_sha256": "d997c4c1640a4fa79df5ec76183b76cb4600dc17c7af47807e0d4c7b12445c26",
+   "public_sha256": "795e690ba87f920442903058db1db25f39b7690a4f8d521e4475c921ce17aebf"
+  },
+  {
+   "path": "provenance/training/qedks/9B/medicine/s44/run_manifest.json",
+   "original_sha256": "79a418746d5608c9ff0e6183d2c1743c137fbe52de95f1662918795e5184a751",
+   "public_sha256": "122268597948436e17636b6b7c87a80506f5c7530c4618850a61ea227defb64c"
+  },
+  {
+   "path": "provenance/training/qedks/2B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "661093a1b37828e99341219823a0ee1adf801b6f37fad52884ef8054d456faf8",
+   "public_sha256": "2beb63d581bdf8a1b9bb8f4fff87978af80d557145813450a9a832e717d8a3fd"
+  },
+  {
+   "path": "provenance/training/qedks/2B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "9afafb75a45eda8e61b49497bd12540e0aafcd99e739d8b6b027ad023bee08da",
+   "public_sha256": "d110c48041c3a48c4a3b2e86cfedd79aa0021b4daf90b6c81e6d233fab5c1d0d"
+  },
+  {
+   "path": "provenance/training/qedks/2B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "bd503ec73a88c8365fb273775fe36cbebb79cd723d89761fd3ae481f3470082d",
+   "public_sha256": "b98c2ab89f6084cef245ce344111ce2df58d97d5c47126a6c9e6a44f9d1928eb"
+  },
+  {
+   "path": "provenance/training/qedks/2B/medicine/s42/run_manifest.json",
+   "original_sha256": "edcc717741070036bf387cf25b02e5d6463d5fb9c1bbc32fdab8eafe31dd327b",
+   "public_sha256": "93fee71a9f47eb8b0934d25910b329538a4a18f5c3a1ea8976c4ca479e678283"
+  },
+  {
+   "path": "provenance/training/qedks/2B/medicine/s43/run_manifest.json",
+   "original_sha256": "cce2911f06dfc31c33f6d0a5a87ef1359401130424f74846150f2d2249fdd610",
+   "public_sha256": "81d3e32ecaf17c9a9013d211b537608c1efb8e38127f337b5f24efc8464e966b"
+  },
+  {
+   "path": "provenance/training/qedks/2B/medicine/s44/run_manifest.json",
+   "original_sha256": "d04d8d9a8faecb6b0e41b552cbd8a5d5eae65103a352afee3e4cd2ac73b16fb0",
+   "public_sha256": "7f637b33552d83d951e21811d7d8924130dd0f800343f8af8fddb071b851501a"
+  },
+  {
+   "path": "provenance/training/qedks/4B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "604ab618bad209c21ea6cbdb7cfc13d6079e8075dc8d651a4eb3e591968fc14d",
+   "public_sha256": "dc4dac8763dccc74b37bafd478688e1be2f48977c8a2a915079438de9d123209"
+  },
+  {
+   "path": "provenance/training/qedks/4B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "7c7e680326c429b8f15508908249ed787e123c8685fb91117d7f0e1aad85f144",
+   "public_sha256": "07c919410788d864039bc9a3af54784b66f4cadc4e290af1c2c2ff8b473afbdb"
+  },
+  {
+   "path": "provenance/training/qedks/4B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "30f123b18c7d32d89c8319196fda1269f686f41583e78ff14d7b463a41abbb08",
+   "public_sha256": "b6c4e52295af7f580ad840c21966f20c524e452bc6117bf540aeaad1bcf18389"
+  },
+  {
+   "path": "provenance/training/qedks/4B/medicine/s42/run_manifest.json",
+   "original_sha256": "a70de5949d68bbfda0f03f2f24d087cf4703f326d33315cef1bf1c5d902de493",
+   "public_sha256": "1438cdccee0c87e3c6061e3e20cbf832d15c32c32d7eb94d0b89f8d30cf8bc14"
+  },
+  {
+   "path": "provenance/training/qedks/4B/medicine/s43/run_manifest.json",
+   "original_sha256": "02d480066ab0d14ec2105dce5b402d0092088682af195e06e2edf172079af2d7",
+   "public_sha256": "83ff88fcf7e341333a815d6715274c9ae4fe5614c6a3054de341a30772239e7a"
+  },
+  {
+   "path": "provenance/training/qedks/4B/medicine/s44/run_manifest.json",
+   "original_sha256": "9fce8e3018e1a797816972525e71a6106215f2f5762759c402d37a53f0528a83",
+   "public_sha256": "18344645e9b6415eb08835c1ccb2416e3c8edbf8a0673f254aa2d39c6c11011a"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "d6c7095015713e3d6ab7b7dd14330468dd9d2c7d3911401e21cde9c22037c087",
+   "public_sha256": "bec393611e2047a4432c7b2e493c2bb0ba5b816bd315cc1ec1b8418aca1dab3f"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "6f2ac047631687816f097f44f1449199aec036a69bb248ee488a32272f20d940",
+   "public_sha256": "84db5cd16864d76495de49c782ad2a38e691a942702fc4d1ce8b059824a199a1"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "35257fe9184c9812d801c0bcae23d46df2c04a322b84b61d33ae7cb658a93e56",
+   "public_sha256": "e6cb67dbcfa11f7a2712ef50d0a9b1490c0091e5c9dc2cd2a3e0ea706f1a293e"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/medicine/s42/run_manifest.json",
+   "original_sha256": "ef6540e04362ac9cf9efccae8387a216a650de9e9a8563e294496d77cd1dab3a",
+   "public_sha256": "a7abe2f1a21deaab52eb1b89047c1c1ef10d20da1835aac8f89f5571a910d3ed"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/medicine/s43/run_manifest.json",
+   "original_sha256": "e80a0a4d40fe8a71930d1822fbc00736b930dd8e7fc59428d265a8426c711899",
+   "public_sha256": "35391d309056aca4afadb0e7afa5882bbf0dbd30f5af4d8c27ac4231e7753b95"
+  },
+  {
+   "path": "provenance/training/mapsteal/9B/medicine/s44/run_manifest.json",
+   "original_sha256": "fb4ce5faf1a4a541bb2d3554ebeebf62e6f7eb24a2b360b2dac82d02bab8a675",
+   "public_sha256": "60b67991e506a9d97fee84ddb1460ca23ae10b3b86b648207bf8752f4b68e608"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "ee2484f6b164a179b0d7342f990788b71a67476eae339b19b67c6e1b18ee3b76",
+   "public_sha256": "5ab3713c61d06a44b6723014ffc915e7f2b65f3828a4dbdd93ad086be9b03069"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "528bf6324bb120afc4542cd96c557b155c227efd2e08b7448f1570f2ef80f506",
+   "public_sha256": "5f3ccc2b359c254866b1dc221a5304bb1787419a5dee1c0e853fef84158aabed"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "8924f0231a5bcd76cf2ad7450813250167986bc4a89ac03c80388e73c827173c",
+   "public_sha256": "9b97715187f1393b61240ea2c55bbf6f38f0d9cc281eaa6cd8b35ab8dbb67e24"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/medicine/s42/run_manifest.json",
+   "original_sha256": "15211e138ec322c7b64101d14ae8109431fe3eb3655670173fda177d7d06ef3c",
+   "public_sha256": "f82f0bd1b78c53f997665e28442cafb5dc1d509dd21701d6966cc75888f5373b"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/medicine/s43/run_manifest.json",
+   "original_sha256": "f255e9a162b88af0e3a335e20393be84a6cd61db95a6b3d7ef5a98c0ba4ed655",
+   "public_sha256": "076518dfd2bedf00b4b2ee4c85e68e9ea39f421513fd99761058b9aa6a807689"
+  },
+  {
+   "path": "provenance/training/mapsteal/2B/medicine/s44/run_manifest.json",
+   "original_sha256": "e1d0a4ae69d2e85e24775d10274806caa5374adc6132d24b2d4ede1222d1eb78",
+   "public_sha256": "7f9606c1c598f4e9e275428156880c2bf9a5760c7d41cc12b7275d397e5187fe"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/cybersecurity/s42/run_manifest.json",
+   "original_sha256": "64a68c4bb7bf43e62e1e44ea28fa39dcef8b70e3c885f604bae51ad93e962847",
+   "public_sha256": "ca48867c2f2efa79d347bb8b089fc018d8fb62c29b49e53e75e39cea54a6af74"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/cybersecurity/s43/run_manifest.json",
+   "original_sha256": "c762de477d9bbd1bb451055e8f0b9edd84d3361123a0b08fa4d43d358c88e193",
+   "public_sha256": "b733e30c267f56fe4205ff256977c72ab83e2f15bfad656d0fc1e4278c721ae1"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/cybersecurity/s44/run_manifest.json",
+   "original_sha256": "16e4ea45a4cb4e827bba930a8c6ae1c069cdbf094609d5ba3e245febd1be1d70",
+   "public_sha256": "ac406d0cab6fc4cc8d4cb4bbf61fefb27cd25273ae35bd8bfcdfdff2473ad20f"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/medicine/s42/run_manifest.json",
+   "original_sha256": "13e1e85530363ee06ab5ce06b6cf131548f3cd3d42d5c78859cec33108408263",
+   "public_sha256": "b60df44f1a875a2e70517dc5b9932e73995a24dec75b5094097dc12b057a4270"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/medicine/s43/run_manifest.json",
+   "original_sha256": "74bbb77a955fca562e43e6ef98b48eb7646b6fb2965c9534277c8d38858e7dd0",
+   "public_sha256": "296734cee3f5b7fb61368298728dd794fbcd0784c509a177d6bb572110873d29"
+  },
+  {
+   "path": "provenance/training/mapsteal/4B/medicine/s44/run_manifest.json",
+   "original_sha256": "016270b31151f911e380dfea3094adc0992634617f7d98aaf7c49cf1009a343c",
+   "public_sha256": "28491e26a69e5202b56f636d1ffdcaaba3e5e42607bf0c9ff2120f94f61b76da"
+  }
+ ]
+}

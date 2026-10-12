@@ -1,0 +1,38 @@
+{
+ "student": "Qwen/Qwen3.5-4B",
+ "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "checkpoint": "none",
+ "benchmarks": {
+  "cybermetric": {
+   "n_scored": 100,
+   "n_reported": 100,
+   "n_correct": 83,
+   "accuracy_pct": 83.0,
+   "excluded_item_ids": [
+    "cybermetric:1729"
+   ],
+   "panel_sha256": "ed1543856baa61d77e095238ec1aa1cec30be931631964a14073a1f58541eedf",
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  },
+  "seceval": {
+   "n_scored": 100,
+   "n_reported": 100,
+   "n_correct": 82,
+   "accuracy_pct": 82.0,
+   "excluded_item_ids": [],
+   "panel_sha256": "0049dff4e7c336f862902e21452a41adca37b6b3eac5bf1aae4a5c9f40097a9f",
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  },
+  "cti_bench": {
+   "n_scored": 100,
+   "n_reported": 100,
+   "n_correct": 66,
+   "accuracy_pct": 66.0,
+   "excluded_item_ids": [],
+   "panel_sha256": "0b7bc60b27f2948222da2a33c68bf0deafb5b1ee6d9861c37baf6e88d6bb3e60",
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  }
+ },
+ "seconds": 64.6,
+ "torch": "2.13.0+cu130"
+}

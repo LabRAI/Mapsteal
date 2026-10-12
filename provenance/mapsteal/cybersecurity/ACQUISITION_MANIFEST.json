@@ -1,0 +1,94 @@
+{
+ "study": "cybersecurity_recursive_b500_v1",
+ "phase": "B acquisition complete, C verification/QC/overlap/coverage complete",
+ "freeze_commit": "d22a06557e7267435d7fa4f0ff4f7035245c6856",
+ "continues": "cybersecurity_recursive_pilot_v1 (freeze d9b5ed6f, final 2e5046fb)",
+ "successful_qa_total": 500,
+ "root_qa": 40,
+ "recursive_qa": 460,
+ "new_successful_qa": 400,
+ "B100_prefix_equals_pilot": true,
+ "root40_strict_prefix": true,
+ "teacher_attempts_total": 501,
+ "teacher_attempts_new": 400,
+ "retries_total": 1,
+ "retries_new": 0,
+ "failed_steps": 0,
+ "root_requeues": 0,
+ "auxiliary_model_calls": 0,
+ "accounting_invariant": true,
+ "tokens_new": {
+  "input": 1038472,
+  "output": 226422
+ },
+ "cost_usd_new": 3.8883,
+ "cost_usd_total_incl_pilot": 4.8904,
+ "caps": {
+  "new_cost_usd": 7.0,
+  "new_attempts": 450
+ },
+ "teacher_wall_clock_utc_new": [
+  "2026-10-08T20:16:07.715710+00:00",
+  "2026-10-08T20:48:40.846649+00:00"
+ ],
+ "executed_by_depth": {
+  "d0": 40,
+  "d1": 104,
+  "d2": 233,
+  "d3+": 123,
+  "max_depth": 7
+ },
+ "direction_registry_size_total": 727,
+ "stop_rules_fired": [],
+ "auto_B1000": false,
+ "checkpoints": [
+  "B40",
+  "B100",
+  "B250",
+  "B500"
+ ],
+ "sha256": {
+  "ROOT40.jsonl": "3cbe34cdd9378eb253169d0cb60cc40611aaf5f1113d4c7292ae2dacb4e07089",
+  "branches/CYB_RFC/trajectory.jsonl": "3738b5728ac3f46427e4e6739a7bda20a0aaa4d18f0b80dfd5701ed234611355",
+  "branches/CYB_RFC/checkpoints/B100.json": "43e5db2d492f5069165e11239e56541bfa361f98d506c6cb55e45f90b22b453e",
+  "branches/CYB_RFC/checkpoints/B250.json": "3d3395b2f68fdf2b9ec1b7ac2348d1753ed1f430cdec71bef5e57b3ea42ca536",
+  "branches/CYB_RFC/checkpoints/B500.json": "7bb5b853a7d832ce0c60d8dde6836480736d4cfe7190284777828478da3ee862",
+  "branches/CYB_RFC/graph_state.json": "b401273d3b07aac92d2590304a58de385071b578f8afa9046230cc06de5fbe02",
+  "branches/CYB_RFC/cost_ledger.json": "a7955274db5c113c110ecdeee6916b106133ab6634ecad5a869abff83a020aab",
+  "branches/store_CYB_RFC/model_call_ledger.jsonl": "46d8861dc00558ae77920a4b16e170d37f8d66e6194e536fb1303209d396ded0",
+  "results/corpus_qc.json": "9f839f3b7d6d53150df5364205773d17eda0f9b23f1dfcaa1cdb5d375d087d9a",
+  "results/overlap_post.json": "d9086fd03d8c26081fefdeea1ad42dc43f496d7f0ca25b33d52f2114fa9d791f",
+  "results/overlap_post_decisions.json": "26f295ded414cf004e5372b4158f67a626c4970b9eabab4360c4967bcd7adf41",
+  "results/coverage.json": "b3e79b36b69a74db1ae83b2ce078dc78bae1c358b11d1d7deeb27cac015497de"
+ },
+ "trajectory_sha256_first500_local_rows": "3738b5728ac3f46427e4e6739a7bda20a0aaa4d18f0b80dfd5701ed234611355",
+ "label_segments": {
+  "roots 1-40": {
+   "n": 40,
+   "catalogue_specific": 0,
+   "mechanism": 36,
+   "condition": 11,
+   "exception": 11,
+   "concept_explanation": 15,
+   "chars_ans_expl": 615
+  },
+  "rec 41-100": {
+   "n": 60,
+   "catalogue_specific": 0,
+   "mechanism": 34,
+   "condition": 4,
+   "exception": 2,
+   "concept_explanation": 43,
+   "chars_ans_expl": 377
+  },
+  "rec 101-500": {
+   "n": 400,
+   "catalogue_specific": 0,
+   "mechanism": 242,
+   "condition": 74,
+   "exception": 21,
+   "concept_explanation": 290,
+   "chars_ans_expl": 408
+  }
+ }
+}

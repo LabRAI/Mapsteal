@@ -1,0 +1,44 @@
+{
+ "variant": "QEDKS-Adapted",
+ "domain": "med",
+ "size": "4B",
+ "acquisition_seed": 42,
+ "teacher": "gpt-4.1",
+ "student": "Qwen/Qwen3.5-4B@851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "code_commit": "a064ce598c1efdad47269344d95c9359d682cc57",
+ "code_sha256": {
+  "qedks/trainStudentv21.py": "b1c0b676ef56c8e7a0bc374578aface694fa021214cd34baaf33b01df92114ea",
+  "qedks/src/student/askques.py": "389291d5b99fac7869bf2e2e4a81ba4a9b9e77923c7cd21551e8a803711c05aa",
+  "qedks/src/student/studentModel.py": "d6c00226835e17a872c57e4a6c3a38d074a7e95afc90356212688f0fe937d84b",
+  "qedks/src/student/fast_gen.py": "9f7d1c871cdefa3f1acd0c5636568efd7e73820e2cf744f580298f64f37e9bad",
+  "qedks/src/student/models_table.py": "6da5e2baf767aea3b2d3ebdfe5fc071b00bd2a0fe20f6944276245a4cabf6a1b",
+  "qedks/src/teacher/teacherGPT4API.py": "46f174073a17b311be8dc10624056ac50d0a789b1e7eaed277819bab5f59cfff",
+  "qedks/src/data/dataUtils.py": "782c44eaa4366a7072434c58c7e1d4d403fbe46dc21d40e5471d865c0d616fe6",
+  "qedks/src/followup/followup.py": "414151b3d1802c630ecbcf9db8165f29cfd83a4f7a228b8bc843b72289d214e0",
+  "qedks/src/coq/coq_utils.py": "eaeb21a6bb813965420c86bfebd862fe20b3ec8821eebd337d3e5879304abe0d",
+  "qedks/src/correct/untils.py": "74ef3eede84974748af497f6954b1383a2d56ef1c6dd60cb07f6ea6e87f1b357"
+ },
+ "teacher_totals": {
+  "requests": 898,
+  "input_tokens": 441026,
+  "output_tokens": 52795,
+  "cost_usd": 1.3044
+ },
+ "requests_by_kind": {
+  "roots": 1,
+  "main_qa": 398,
+  "correction": 102,
+  "entity_extraction": 397
+ },
+ "output_sha256": {
+  "corpus_raw.jsonl": "e853710ae97418d92033cfe6bda60172093f138c9797b1e98fbaf6e102be6e8a",
+  "training_corpus.jsonl": "6134beb6f836c5e2f44112f026f6eeafed3afb03d61373ee0c56a71704d15690",
+  "teacher_ledger.jsonl": "97cfe00e3e7a6169517ffcf36b9c02917c5efa89a0e84eb3dfec0632f579a961",
+  "structured_log.jsonl": "43b1bfa3774cf5d73a926400334ad1af031132b47639e3367dda13e1e624e172",
+  "diversification_log.jsonl": "158c729af12250782d13e73e6ee5866b5fcb5c3745010190b3f384d97779635b",
+  "refine_log.jsonl": "88c8fff31a36b9448ecd89db79737ff746bb68bad3acf4017d554db451b57628",
+  "summary.json": "214a14177f17bf7edf285581144e43b82bf951329be4fd548ccfa817c8ee5d0e",
+  "roots.json": "503435ced613395c6179d7a77aecc6e5705c04d2cefcd976e46d807f1d8f093c"
+ },
+ "wall_seconds": 7656.8
+}

@@ -1,0 +1,33 @@
+{
+ "student": "Qwen/Qwen3.5-4B",
+ "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "checkpoint": "none",
+ "benchmarks": {
+  "medmcqa": {
+   "n": 100,
+   "n_correct": 57,
+   "accuracy_pct": 57.0,
+   "panel_sha256": "14d72625e957247bd3156f89de17cb25fbaf62c556a8761335f6dc1a9c52d6d5",
+   "panel_n": 500,
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  },
+  "medqa": {
+   "n": 100,
+   "n_correct": 66,
+   "accuracy_pct": 66.0,
+   "panel_sha256": "cfa75cbcc53c29b023752b0a395ff49d8202121041392735ae44771a5ec734a3",
+   "panel_n": 1273,
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  },
+  "medxpertqa_text": {
+   "n": 100,
+   "n_correct": 12,
+   "accuracy_pct": 12.0,
+   "panel_sha256": "1866e7ff66328aede184563104c42fac2ba84dd43f56fd5696d91a62d69eb046",
+   "panel_n": 2450,
+   "coverage": "SUBSET: first 100 items (smoke test, not comparable to Table 1)"
+  }
+ },
+ "seconds": 91.0,
+ "torch": "2.13.0+cu130"
+}

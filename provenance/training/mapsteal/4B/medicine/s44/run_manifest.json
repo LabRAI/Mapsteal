@@ -1,0 +1,30 @@
+{
+ "source": "Stage D finalist selected training configuration (fresh training)",
+ "status": "planned-train",
+ "adapter_dir": null,
+ "eval_dir": null,
+ "xp_pred": null,
+ "adapter_sha256": "fe04484ce014a12ed93776ab2382afc4fbe201e2494fb9e8a37a8efc71357247",
+ "notes": "selected training configuration seed 44",
+ "config_id": "lr3e-4_ep2_r16_a32_d0.05_tC_linear_w0_s44__final-SELCFG",
+ "seed": 44,
+ "lr": 0.0003,
+ "epochs": 2,
+ "rank": 16,
+ "alpha": 32,
+ "dropout": 0.05,
+ "targets": "C",
+ "scheduler": "linear",
+ "warmup": 0.0,
+ "optimizer_steps": 124,
+ "train_seconds": 1463.5,
+ "training_gpu_hours": 0.4065,
+ "dataset_sha256": "3f74c9af2cd869ad17df4554a95385ce0585815f8c8b16a0103afaeeaaa9c4fb",
+ "rows": 495,
+ "final_train_loss_last10_mean": 0.28613536804914474,
+ "library_versions": {
+  "torch": "2.13.0+cu130",
+  "transformers": "5.14.1",
+  "peft": "0.19.1"
+ }
+}

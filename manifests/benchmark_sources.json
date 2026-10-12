@@ -1,0 +1,41 @@
+{
+ "note": "Release of each benchmark used to build the frozen panels (tools/prepare_benchmarks.py). Licenses are those shown on the source pages when checked (2026-10-12); read the terms of each benchmark yourself.",
+ "sources": {
+  "medxpertqa_text_test.jsonl": {
+   "description": "MedXpertQA, Text/test",
+   "url": "https://huggingface.co/datasets/TsinghuaC3I/MedXpertQA/resolve/7e7c465a68eb2b866926bfa59c8c9d17a8daba65/Text/test.jsonl",
+   "sha256": "07ea977f7e326909b51c883b65f6ad7f399fc6db07408ef3630f4e3048ec71b2",
+   "license_listed": "mit (Hugging Face dataset card)"
+  },
+  "medmcqa_validation.parquet": {
+   "description": "MedMCQA, validation split (Hugging Face release)",
+   "url": "https://huggingface.co/datasets/openlifescienceai/medmcqa/resolve/91c6572c454088bf71b679ad90aa8dffcd0d5868/data/validation-00000-of-00001.parquet",
+   "sha256": "b768a1ea34afc9f80d3106d9b21f80fa8a00ec450a1f6cd641af72ca9e591021",
+   "license_listed": "apache-2.0 (Hugging Face dataset card)"
+  },
+  "seceval_questions.json": {
+   "description": "SecEval",
+   "url": "https://huggingface.co/datasets/XuanwuAI/SecEval/resolve/205dab7b0888a06f4b53ca7d9c7093e1326683e1/questions.json",
+   "sha256": "194c3a511104be422a678675a71d44315d0c0392b040745155aeebc321e692e0",
+   "license_listed": "none listed on the dataset page"
+  },
+  "cti-mcq.tsv": {
+   "description": "CTI-Bench, MCQ",
+   "url": "https://huggingface.co/datasets/AI4Sec/cti-bench/resolve/9237e1636ee3e168fbe5ebdcc1c571de0525e568/cti-mcq.tsv",
+   "sha256": "11e0af8db2dae9706c6e79901d2390bcdf9746e8feccbd9ba10682df649bcc6a",
+   "license_listed": "cc-by-nc-sa-4.0 (Hugging Face dataset card)"
+  },
+  "CyberMetric-10000-v1.json": {
+   "description": "CyberMetric-10000",
+   "url": "https://raw.githubusercontent.com/cybermetric/CyberMetric/205262cdf5022ba890e792efd176fb19d42913fa/CyberMetric-10000-v1.json",
+   "sha256": "4e35bb62c73b60bd27e54512b2ace6f9286ff2921a45a3d5fe2da22401e04bbb",
+   "license_listed": "none listed in the GitHub repository"
+  },
+  "medqa_US_test.jsonl": {
+   "description": "MedQA, USMLE (US) test split, 5 options, member data_clean/questions/US/test.jsonl of the project archive",
+   "url": "https://drive.google.com/file/d/1ImYUSLk9JbgHXOemfvyiDiirluZHPeQw",
+   "sha256": "cfa75cbcc53c29b023752b0a395ff49d8202121041392735ae44771a5ec734a3",
+   "license_listed": "MIT (GitHub repository jind11/MedQA; data hosted on Google Drive)"
+  }
+ }
+}

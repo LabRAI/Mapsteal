@@ -1,0 +1,80 @@
+{
+ "device": "cuda:0",
+ "seed": 43,
+ "base_model": "<HPC_HOME>/models/Qwen3.5-9B-c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+ "base_model_id": "Qwen/Qwen3.5-9B",
+ "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+ "arm": "9B_SELCFG_s43",
+ "dataset": "<research-archive>/dataset_S40_MEDB500T.jsonl",
+ "dataset_sha256": "3f74c9af2cd869ad17df4554a95385ce0585815f8c8b16a0103afaeeaaa9c4fb",
+ "rows": 495,
+ "fresh_base": true,
+ "init_adapter": null,
+ "device_provenance": {
+  "requested_torch_device": "cuda:0",
+  "requested_physical_uuid": "<gpu-uuid>",
+  "runtime_visible_devices": [
+   "<gpu-uuid>"
+  ],
+  "runtime_torch_device": "cuda:0",
+  "runtime_physical_uuid": "<gpu-uuid>",
+  "runtime_device_count": 1,
+  "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+  "parallelism": "single_gpu",
+  "world_size": 1,
+  "cuda_visible_devices": "<gpu-uuid>",
+  "isolation_verified": true
+ },
+ "config_id": "9B_SELCFG_s43",
+ "size": "9B",
+ "label": "selected training configuration",
+ "lr": 0.0003,
+ "epochs": 2,
+ "rank": 16,
+ "alpha": 32,
+ "dropout": 0.05,
+ "targets": "C",
+ "scheduler": "linear",
+ "warmup": 0.0,
+ "xp": true,
+ "role": "selected training configuration transfer",
+ "observed_training": {
+  "metrics": {
+   "train_runtime": 1219.5346,
+   "train_samples_per_second": 0.812,
+   "train_steps_per_second": 0.102,
+   "total_flos": 5710175389126656.0,
+   "train_loss": 0.4275947028110104,
+   "epoch": 2.0
+  },
+  "device_provenance": {
+   "requested_torch_device": "cuda:0",
+   "requested_physical_uuid": "<gpu-uuid>",
+   "runtime_visible_devices": [
+    "<gpu-uuid>"
+   ],
+   "runtime_torch_device": "cuda:0",
+   "runtime_physical_uuid": "<gpu-uuid>",
+   "runtime_device_count": 1,
+   "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+   "parallelism": "single_gpu",
+   "world_size": 1,
+   "cuda_visible_devices": "<gpu-uuid>",
+   "isolation_verified": true
+  },
+  "observed_optimizer_steps": 124,
+  "trainable_parameter_tensors": 192,
+  "initial_adapter_sha256": "62f38899ff7507e62fbbea9e50d5bd391779c0fc5f55d7943e0fae91a2ce4a01",
+  "fresh_init_verified": true,
+  "warm_started": false
+ },
+ "train_seconds": 1263.4,
+ "training_gpu_hours": 0.3509,
+ "trainable_parameters": 25165824,
+ "adapter_sha256": "7bf0aa8914b7e3397a334907a857feacd926fdfaf1aaef8cf798dcef2833e889",
+ "library_versions": {
+  "torch": "2.13.0+cu130",
+  "transformers": "5.14.1",
+  "peft": "0.19.1"
+ }
+}

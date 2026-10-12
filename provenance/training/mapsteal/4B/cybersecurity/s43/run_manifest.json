@@ -1,0 +1,74 @@
+{
+ "device": "cuda:0",
+ "seed": 43,
+ "base_model": "Qwen/Qwen3.5-4B",
+ "base_model_id": "Qwen/Qwen3.5-4B",
+ "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "arm": "SELCFG_CYB_4B_B500_s43",
+ "dataset": "<research-archive>/dataset_CYB_B500.jsonl",
+ "dataset_sha256": "768114d0bce6f8a45103026add9781133c36e2d5d7b3208f1a81e13fc2f49255",
+ "rows": 500,
+ "fresh_base": true,
+ "init_adapter": null,
+ "device_provenance": {
+  "requested_torch_device": "cuda:0",
+  "requested_physical_uuid": "<gpu-uuid>",
+  "runtime_visible_devices": [
+   "<gpu-uuid>"
+  ],
+  "runtime_torch_device": "cuda:0",
+  "runtime_physical_uuid": "<gpu-uuid>",
+  "runtime_device_count": 1,
+  "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+  "parallelism": "single_gpu",
+  "world_size": 1,
+  "cuda_visible_devices": "<gpu-uuid>",
+  "isolation_verified": true
+ },
+ "trainable_parameters": 18087936,
+ "adapted_module_types": [
+  "down_proj",
+  "gate_proj",
+  "up_proj"
+ ],
+ "observed_training": {
+  "metrics": {
+   "train_runtime": 1198.5972,
+   "train_samples_per_second": 0.834,
+   "train_steps_per_second": 0.105,
+   "total_flos": 2267072987578368.0,
+   "train_loss": 0.6758422402162401,
+   "epoch": 2.0
+  },
+  "device_provenance": {
+   "requested_torch_device": "cuda:0",
+   "requested_physical_uuid": "<gpu-uuid>",
+   "runtime_visible_devices": [
+    "<gpu-uuid>"
+   ],
+   "runtime_torch_device": "cuda:0",
+   "runtime_physical_uuid": "<gpu-uuid>",
+   "runtime_device_count": 1,
+   "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+   "parallelism": "single_gpu",
+   "world_size": 1,
+   "cuda_visible_devices": "<gpu-uuid>",
+   "isolation_verified": true
+  },
+  "observed_optimizer_steps": 126,
+  "trainable_parameter_tensors": 192,
+  "initial_adapter_sha256": "42842873de81beba61e5d4ebdf02624a89633bb89193fcc7b579622b5ac51ccb",
+  "fresh_init_verified": true,
+  "warm_started": false
+ },
+ "expected_optimizer_steps": 126,
+ "train_seconds": 1224.2,
+ "peak_gpu_memory_allocated_gb": 9.53,
+ "adapter_sha256": "38c3a0f015b95bd09e2c844a857a5219b3ed2fbb5c062b02e7ae021f72e46a45",
+ "recipe": "selected training configuration: lr 3e-4, 2 epochs, r16/alpha32, dropout .05, MLP-only (gate/up/down), linear, warmup 0 (development-selected on Medicine 4B)",
+ "library_versions": {
+  "torch": "2.13.0+cu130",
+  "transformers": "5.14.1",
+  "peft": "0.19.1"
+ }
+}

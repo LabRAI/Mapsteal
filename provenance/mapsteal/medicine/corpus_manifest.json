@@ -1,0 +1,87 @@
+{
+ "definition": "B_total = number of SUCCESSFUL Teacher QA queries, including the cold-start Teacher responses; roots (trajectory) and Seed40 are not free supervision. QC drops can make the final training-row count smaller than B; no top-up Teacher calls.",
+ "cold_start": {
+  "name": "Seed40 (Cold-start B40)",
+  "rows": 40,
+  "sha256": "bcfee75a08bdbd66903fba8fc1d89e627f5bc5bbad2468379dce1244745e3833",
+  "note": "Teacher-answered cold-start QA of an earlier lineage, outside the R-FC trajectory"
+ },
+ "trajectory": {
+  "path": "<research-archive>/trajectory.jsonl",
+  "sha256": "d195404d49f562cde0ea096343677050dbc9417c69e321674efdd98380ce1eda",
+  "n_successful_QA": 2000,
+  "n_root_answers_first": 35,
+  "roots_are_first_35": true
+ },
+ "corpora": {
+  "MEDB500T": {
+   "nominal_total_budget_B": 500,
+   "cold_start_queries": 40,
+   "trajectory_QA_used": 460,
+   "root_answers_inside_trajectory": 35,
+   "recursive_QA_inside_trajectory": 425,
+   "autonomous_queries_beyond_cold_start_seed40": 460,
+   "teacher_attempts_trajectory": 460,
+   "qc_drops": {
+    "exact_duplicate_question": 5
+   },
+   "raw_rows": 500,
+   "final_training_rows": 495,
+   "response_loss_tokens_total": 43953,
+   "sha256": "3f74c9af2cd869ad17df4554a95385ce0585815f8c8b16a0103afaeeaaa9c4fb",
+   "row_prefix_of_historical_corpus": {
+    "historical_corpus": "<research-archive>/dataset_S40_RFC500.jsonl",
+    "historical_rows": 535,
+    "historical_B_total_equivalent": 540,
+    "is_row_prefix": true
+   },
+   "nested_over_seed40": true
+  },
+  "MEDB1000T": {
+   "nominal_total_budget_B": 1000,
+   "cold_start_queries": 40,
+   "trajectory_QA_used": 960,
+   "root_answers_inside_trajectory": 35,
+   "recursive_QA_inside_trajectory": 925,
+   "autonomous_queries_beyond_cold_start_seed40": 960,
+   "teacher_attempts_trajectory": 960,
+   "qc_drops": {
+    "exact_duplicate_question": 5
+   },
+   "raw_rows": 1000,
+   "final_training_rows": 995,
+   "response_loss_tokens_total": 87211,
+   "sha256": "c5b37c570b5d731d4b39fb0f687a254d1ee0753374e1b4fef413afc9b4132140",
+   "row_prefix_of_historical_corpus": {
+    "historical_corpus": "<research-archive>/dataset_S40_RFC1000.jsonl",
+    "historical_rows": 1035,
+    "historical_B_total_equivalent": 1040,
+    "is_row_prefix": true
+   },
+   "nested_over_previous": true
+  },
+  "MEDB2000T": {
+   "nominal_total_budget_B": 2000,
+   "cold_start_queries": 40,
+   "trajectory_QA_used": 1960,
+   "root_answers_inside_trajectory": 35,
+   "recursive_QA_inside_trajectory": 1925,
+   "autonomous_queries_beyond_cold_start_seed40": 1960,
+   "teacher_attempts_trajectory": 1960,
+   "qc_drops": {
+    "exact_duplicate_question": 5
+   },
+   "raw_rows": 2000,
+   "final_training_rows": 1995,
+   "response_loss_tokens_total": 177270,
+   "sha256": "271d4677a7924fa460ee854109ed9d919162263157d5d61e2a1f684ad29653ea",
+   "row_prefix_of_historical_corpus": {
+    "historical_corpus": "<research-archive>/dataset_S40_RFC2000.jsonl",
+    "historical_rows": 2035,
+    "historical_B_total_equivalent": 2040,
+    "is_row_prefix": true
+   },
+   "nested_over_previous": true
+  }
+ }
+}

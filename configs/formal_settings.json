@@ -1,0 +1,158 @@
+{
+  "description": "Final settings of the experiments reported in Table 1. tests/test_formal_settings.py checks these values against the archived run records (provenance/) and the code constants.",
+  "students": {
+    "2B": {
+      "id": "Qwen/Qwen3.5-2B",
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    },
+    "4B": {
+      "id": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    },
+    "9B": {
+      "id": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    }
+  },
+  "domains": [
+    "medicine",
+    "cybersecurity"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "teacher": {
+    "model": "gpt-4.1",
+    "mapsteal_pinned_snapshot": "gpt-4.1-2025-04-14",
+    "temperature": 0
+  },
+  "adapter_training": {
+    "applies_to": [
+      "MapSteal",
+      "QEDKS-Adapted"
+    ],
+    "fresh_lora_from_pristine_student": true,
+    "learning_rate": 0.0003,
+    "epochs": 2,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "lr_schedule": "linear",
+    "warmup_ratio": 0.0,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "max_sequence_length": 1024,
+    "gradient_checkpointing": true,
+    "precision": "bf16",
+    "loss": "response tokens only",
+    "selection_note": "selected on Medicine 4B before being applied unchanged to all sizes, domains and methods (recorded in the training manifests); the evaluation data used during that selection are not documented in this repository"
+  },
+  "evaluation": {
+    "protocol": "zero-shot lettered multiple choice; argmax over next-token option-letter log-probabilities",
+    "batch_size": 1,
+    "precision": "bf16",
+    "benchmarks": {
+      "Medicine": {
+        "MedMCQA": 500,
+        "MedQA": 1273,
+        "MedXpertQA-Text": 2450
+      },
+      "Cybersecurity": {
+        "CyberMetric": 2499,
+        "SecEval": 1521,
+        "CTI-Bench": 2482
+      }
+    },
+    "excluded_items": {
+      "cybermetric:1729": "overlap with an acquisition question of the Cybersecurity MapSteal corpus (re-worded stem, same answer target; embedding cosine 0.918); removed for all models; changes CyberMetric accuracies by about 0.03 percentage points"
+    }
+  },
+  "mapsteal": {
+    "acquisition_budget_total": 500,
+    "medicine": {
+      "cold_start_rows": 40,
+      "executed_steps": 460,
+      "training_rows_after_filtering": 495,
+      "roots": 35
+    },
+    "cybersecurity": {
+      "executed_steps": 500,
+      "training_rows_after_filtering": 500,
+      "roots": 40
+    },
+    "teacher_requests_per_executed_step": 1,
+    "max_retries_after_invalid_response": 1,
+    "scheduler": "fair",
+    "max_trajectory_steps": 1500,
+    "acquisition_trajectories": "one per domain, shared by the three training seeds"
+  },
+  "qedks_adapted": {
+    "target_qa_rows": 500,
+    "max_iterations": 1500,
+    "chain_of_questions_min_words": 100,
+    "kmeans_diversification_every_iterations": 25,
+    "kmeans_diversification_top_clusters": 3,
+    "acquisition_seed_equals_training_seed": true,
+    "teacher_budget_usd_cap": 3.0,
+    "generation_micro_batch": 32,
+    "not_recorded_in_archived_run_records": [
+      "teacher_budget_usd_cap",
+      "generation_micro_batch"
+    ]
+  },
+  "evokd_adapted": {
+    "chat_events": 63,
+    "candidate_rows_total": 500,
+    "rows_per_chat_event": 8,
+    "rows_last_chat_event": 4,
+    "hard_easy_split_per_event": [
+      4,
+      4
+    ],
+    "initial_state_rows": {
+      "medicine": 4,
+      "cybersecurity": 4
+    },
+    "training_steps": 3159,
+    "chat_every_steps": 40,
+    "review_every_steps": 50,
+    "learning_rate": 2e-05,
+    "lr_schedule": "constant",
+    "optimizer": "AdamW, one instance for the whole run",
+    "weight_decay": 0.0,
+    "max_grad_norm": 2.0,
+    "student_batch_size": 8,
+    "max_sequence_length": 1024,
+    "tau": -0.5494510531425476,
+    "student_answer_max_new_tokens": 96,
+    "weakness_turn_max_output_tokens": 1024,
+    "identity_adapter": "LoRA r16, alpha 32, dropout 0.05 on q,k,v,o,gate,up,down projections, B=0 (equal to the pristine Student)",
+    "execution_only_micro_batch": {
+      "4B": 4,
+      "2B": 2,
+      "9B": 2
+    },
+    "execution_only_gradient_checkpointing": {
+      "4B": false,
+      "2B": false,
+      "9B": true
+    },
+    "note_micro_batch": "memory-only setting; archived config snapshots list the nominal micro-batch 4 for all sizes",
+    "teacher_requests_per_chat_event": 3,
+    "teacher_requests_per_run": 189,
+    "runs_with_partial_teacher_call_record": {
+      "med_9B_s42": 180,
+      "med_9B_s43": 10,
+      "med_9B_s44": 183,
+      "cyb_s44": 24
+    },
+    "note_partial_record": "train_summary.json of these four runs counts fewer than the 189 Teacher requests the schedule makes (3 per chat event x 63); the complete per-request ledger is not part of this repository, so their recorded Teacher totals are incomplete"
+  }
+}

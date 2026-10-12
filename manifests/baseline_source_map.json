@@ -1,0 +1,507 @@
+{
+ "files": [
+  {
+   "new": "src/baselines/evokd/kf/__init__.py",
+   "new_sha256": "c72aca0ca07d6af592f66434ce1c2bba14d255a94cdf085c51b8f6771ac210a5",
+   "edits": [],
+   "note": "",
+   "original_sha256": "c72aca0ca07d6af592f66434ce1c2bba14d255a94cdf085c51b8f6771ac210a5"
+  },
+  {
+   "new": "src/baselines/evokd/kf/schemas.py",
+   "new_sha256": "040df589adbe606eb6935641cbba70205685bc7b3dde927bf725196e364922fc",
+   "edits": [],
+   "note": "",
+   "original_sha256": "040df589adbe606eb6935641cbba70205685bc7b3dde927bf725196e364922fc"
+  },
+  {
+   "new": "src/baselines/evokd/kf/ledger.py",
+   "new_sha256": "d9d28285f73750938e94ea6c2ac50dee481a679fd38812ebbc58e7bf9cf4ba5b",
+   "edits": [],
+   "note": "",
+   "original_sha256": "d9d28285f73750938e94ea6c2ac50dee481a679fd38812ebbc58e7bf9cf4ba5b"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/__init__.py",
+   "new_sha256": "59d72a3436e3655e15b5e6fdb73dbba1e1fae8d1065811096a2c3d936b0906bb",
+   "edits": [],
+   "note": "",
+   "original_sha256": "59d72a3436e3655e15b5e6fdb73dbba1e1fae8d1065811096a2c3d936b0906bb"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/alg1.py",
+   "new_sha256": "111b013ef4550c4bd2c2757c360447f006f2678d19ac3d84397f19af4803233b",
+   "edits": [],
+   "note": "",
+   "original_sha256": "111b013ef4550c4bd2c2757c360447f006f2678d19ac3d84397f19af4803233b"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/algorithm.py",
+   "new_sha256": "c5d4240c77649eca0a896a9262624eebe655306af407c924b4c1c4ae886ebf89",
+   "edits": [
+    [
+     "from knowledge_first.ledger import CallLedger",
+     "from ..kf.ledger import CallLedger"
+    ],
+    [
+     "from knowledge_first.schemas import ProviderResponse, TeacherRequest",
+     "from ..kf.schemas import ProviderResponse, TeacherRequest"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "a7c8387918d3f874849d0d73687bd1da6db158132bc83b5475f2a6d27285d3c9"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/final_prompts.py",
+   "new_sha256": "968110c5b4f88505a5cd1eccb4d1eb169fac89fb11e4f28ff3b2b7bc12d8e7d5",
+   "edits": [],
+   "note": "",
+   "original_sha256": "968110c5b4f88505a5cd1eccb4d1eb169fac89fb11e4f28ff3b2b7bc12d8e7d5"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/final_run.py",
+   "new_sha256": "3b4981d54d48bd22df4cd3bbb9394c494a19c96781409b829fdd95c599e8e309",
+   "edits": [],
+   "note": "",
+   "original_sha256": "3b4981d54d48bd22df4cd3bbb9394c494a19c96781409b829fdd95c599e8e309"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/final_teacher.py",
+   "new_sha256": "a9786cdc47caa421815c5457d90cbad572c7d1b58b8d0e1b857adedb6ec0caf2",
+   "edits": [
+    [
+     "from knowledge_first.ledger import CallLedger",
+     "from ..kf.ledger import CallLedger"
+    ],
+    [
+     "from knowledge_first.schemas import ProviderResponse, TeacherRequest",
+     "from ..kf.schemas import ProviderResponse, TeacherRequest"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "21b7455eb2af9e9404fc0707c611a1219c9f89271e04ef23f084ec2e1e066668"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/identify.py",
+   "new_sha256": "e4d19ffc96696cdcb31a7a379979afc28848c04352618682dce1bb6782df507d",
+   "edits": [],
+   "note": "",
+   "original_sha256": "e4d19ffc96696cdcb31a7a379979afc28848c04352618682dce1bb6782df507d"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/identify_v2.py",
+   "new_sha256": "ea82b5899569dc2198b8c50662db7b442f77d2b02f7b6769a5d623b6021ab1ac",
+   "edits": [],
+   "note": "",
+   "original_sha256": "ea82b5899569dc2198b8c50662db7b442f77d2b02f7b6769a5d623b6021ab1ac"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/lora_loop.py",
+   "new_sha256": "d66eb040de6cfcf5d376c53be6d30f748d14d681c4030748b1822ea0081e2333",
+   "edits": [
+    [
+     "from knowledge_first.gpu_isolation import",
+     "from mapsteal.gpu_isolation import"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "e41fe8b69904b2b0fe531fff8f3e96dee33d760749fce27d837ef1f9450eee71"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/pilot_b100_v2.py",
+   "new_sha256": "d441142ba6e40156928621f1acdafb618b012de6738d74606e325cedb1fe4ee7",
+   "edits": [],
+   "note": "",
+   "original_sha256": "d441142ba6e40156928621f1acdafb618b012de6738d74606e325cedb1fe4ee7"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/prompts.py",
+   "new_sha256": "ee194d0f89859ad17c159a4767492f84bb79ee79925f12fd54007780158acbd1",
+   "edits": [],
+   "note": "",
+   "original_sha256": "ee194d0f89859ad17c159a4767492f84bb79ee79925f12fd54007780158acbd1"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/student_backend.py",
+   "new_sha256": "c34644e290c7a7d592d46be6260b6703e4af1411b27ee0325d8ff03163264573",
+   "edits": [
+    [
+     "from knowledge_first.gpu_isolation import",
+     "from mapsteal.gpu_isolation import"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "7281b226781d8de4d0f58251e3711afdc1ee19768a3f7fff2e3917940842221f"
+  },
+  {
+   "new": "src/baselines/evokd/paper_faithful/teacher_provider.py",
+   "new_sha256": "d07a298d6f83fc1d59bcb233e4c4c3a554ca750c299ce5614ad15a46d5d00eb6",
+   "edits": [],
+   "note": "",
+   "original_sha256": "d07a298d6f83fc1d59bcb233e4c4c3a554ca750c299ce5614ad15a46d5d00eb6"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/__init__.py",
+   "new_sha256": "59d72a3436e3655e15b5e6fdb73dbba1e1fae8d1065811096a2c3d936b0906bb",
+   "edits": [],
+   "note": "",
+   "original_sha256": "59d72a3436e3655e15b5e6fdb73dbba1e1fae8d1065811096a2c3d936b0906bb"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/alg1.py",
+   "new_sha256": "111b013ef4550c4bd2c2757c360447f006f2678d19ac3d84397f19af4803233b",
+   "edits": [],
+   "note": "",
+   "original_sha256": "111b013ef4550c4bd2c2757c360447f006f2678d19ac3d84397f19af4803233b"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/algorithm.py",
+   "new_sha256": "c5d4240c77649eca0a896a9262624eebe655306af407c924b4c1c4ae886ebf89",
+   "edits": [
+    [
+     "from knowledge_first.ledger import CallLedger",
+     "from ..kf.ledger import CallLedger"
+    ],
+    [
+     "from knowledge_first.schemas import ProviderResponse, TeacherRequest",
+     "from ..kf.schemas import ProviderResponse, TeacherRequest"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "a7c8387918d3f874849d0d73687bd1da6db158132bc83b5475f2a6d27285d3c9"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/final_prompts.py",
+   "new_sha256": "0075fde2c9754420e7992e19986ad527d931ce264a0dff3aae9c8c226fc20173",
+   "edits": [],
+   "note": "",
+   "original_sha256": "0075fde2c9754420e7992e19986ad527d931ce264a0dff3aae9c8c226fc20173"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/final_run.py",
+   "new_sha256": "3b4981d54d48bd22df4cd3bbb9394c494a19c96781409b829fdd95c599e8e309",
+   "edits": [],
+   "note": "",
+   "original_sha256": "3b4981d54d48bd22df4cd3bbb9394c494a19c96781409b829fdd95c599e8e309"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/final_teacher.py",
+   "new_sha256": "a9786cdc47caa421815c5457d90cbad572c7d1b58b8d0e1b857adedb6ec0caf2",
+   "edits": [
+    [
+     "from knowledge_first.ledger import CallLedger",
+     "from ..kf.ledger import CallLedger"
+    ],
+    [
+     "from knowledge_first.schemas import ProviderResponse, TeacherRequest",
+     "from ..kf.schemas import ProviderResponse, TeacherRequest"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "21b7455eb2af9e9404fc0707c611a1219c9f89271e04ef23f084ec2e1e066668"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/identify.py",
+   "new_sha256": "e4d19ffc96696cdcb31a7a379979afc28848c04352618682dce1bb6782df507d",
+   "edits": [],
+   "note": "",
+   "original_sha256": "e4d19ffc96696cdcb31a7a379979afc28848c04352618682dce1bb6782df507d"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/identify_v2.py",
+   "new_sha256": "0faae03ea5d60d570060aa70acced4e5ae45aefceb1b7169f95bf0520da257d1",
+   "edits": [],
+   "note": "",
+   "original_sha256": "0faae03ea5d60d570060aa70acced4e5ae45aefceb1b7169f95bf0520da257d1"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/lora_loop.py",
+   "new_sha256": "d66eb040de6cfcf5d376c53be6d30f748d14d681c4030748b1822ea0081e2333",
+   "edits": [
+    [
+     "from knowledge_first.gpu_isolation import",
+     "from mapsteal.gpu_isolation import"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "e41fe8b69904b2b0fe531fff8f3e96dee33d760749fce27d837ef1f9450eee71"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/pilot_b100_v2.py",
+   "new_sha256": "d441142ba6e40156928621f1acdafb618b012de6738d74606e325cedb1fe4ee7",
+   "edits": [],
+   "note": "",
+   "original_sha256": "d441142ba6e40156928621f1acdafb618b012de6738d74606e325cedb1fe4ee7"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/prompts.py",
+   "new_sha256": "5fab408001c45c93cb8ae88747b76c93c3b6289ebf6967d02570ea40f72e246d",
+   "edits": [],
+   "note": "",
+   "original_sha256": "5fab408001c45c93cb8ae88747b76c93c3b6289ebf6967d02570ea40f72e246d"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/student_backend.py",
+   "new_sha256": "02c1d434610d0ae64b5c5f54df8e5adf5f355fcb38db54b4ff965f4c420e02eb",
+   "edits": [
+    [
+     "from knowledge_first.gpu_isolation import",
+     "from mapsteal.gpu_isolation import"
+    ]
+   ],
+   "note": "",
+   "original_sha256": "6920d79754528fb5ff85e59e90c86d3f8eafdd9e5af7a832bca3bb75dc9bc65f"
+  },
+  {
+   "new": "src/baselines/evokd/cyber/teacher_provider.py",
+   "new_sha256": "d07a298d6f83fc1d59bcb233e4c4c3a554ca750c299ce5614ad15a46d5d00eb6",
+   "edits": [],
+   "note": "",
+   "original_sha256": "d07a298d6f83fc1d59bcb233e4c4c3a554ca750c299ce5614ad15a46d5d00eb6"
+  },
+  {
+   "new": "src/baselines/evokd/domain.py",
+   "new_sha256": "e91c4f88982b774266fd402740dbcfa7218a18cf9aac37c5f07a43bc0819fee6",
+   "edits": [
+    [
+     "R = Path(__file__).resolve().parents[3]\n",
+     "R = Path(__file__).resolve().parents[3]   # repository root\n"
+    ],
+    [
+     "PKG = {'med': 'evokd_paper_faithful', 'cyber': 'evokd_cyber'}[DOMAIN]\n",
+     "PKG = {'med': 'baselines.evokd.paper_faithful', 'cyber': 'baselines.evokd.cyber'}[DOMAIN]\n"
+    ],
+    [
+     "PKG_DIR = R / {'med': 'studies/evokd_medicine_paper_faithful_v1', 'cyber': 'studies/evokd_cybersecurity_v1'}[DOMAIN]\n",
+     "# (legacy PKG_DIR line removed)\n"
+    ],
+    [
+     "D0 = Path(__file__).resolve().parents[1] / {'med': 'frozen/d0_root4_medicine.jsonl', 'cyber': 'frozen/d0_root4_cyber.jsonl'}[DOMAIN]\n",
+     "D0 = R / 'data/evokd' / {'med': 'd0_root4_medicine.jsonl', 'cyber': 'd0_root4_cyber.jsonl'}[DOMAIN]\n"
+    ],
+    [
+     "sys.path.insert(0, str(R / 'src')); sys.path.insert(0, str(PKG_DIR))\n",
+     "# (legacy line removed: packages are imported as baselines.evokd.*; no sys.path manipulation)\n"
+    ]
+   ],
+   "note": "package names, D0 location and sys.path lines",
+   "original_sha256": "775dac4c76eb34c95ded2b82925413c84327c506148c2b4baf3b61e8fed76b0e"
+  },
+  {
+   "new": "src/baselines/evokd/lib.py",
+   "new_sha256": "1e03baec71e81c1fe4279168f317351cefeb8271c9208f0abc407d57b1a823ea",
+   "edits": [
+    [
+     "sys.path.insert(0, str(Path(__file__).resolve().parent))\nimport domain\nfrom domain import R\n",
+     "from . import domain\n"
+    ],
+    [
+     "from knowledge_first.gpu_isolation import device_provenance",
+     "from mapsteal.gpu_isolation import device_provenance"
+    ],
+    [
+     "from knowledge_first.training import LoraRecipe",
+     "from mapsteal.training.recipe import LoraRecipe"
+    ]
+   ],
+   "note": "relative imports; LoraRecipe/gpu_isolation from mapsteal (same definitions)",
+   "original_sha256": "fb87709556f42628d44e2f5949e915da39d68b6c5399884dde31e5e74db7e779"
+  },
+  {
+   "new": "src/baselines/evokd/mode.py",
+   "new_sha256": "f48392cba660e13d77242ac176cbf4c11f07608147f0769e6dd984270996af57",
+   "edits": [
+    [
+     "sys.path.insert(0, str(Path(__file__).resolve().parent))\nimport v2_lib, domain\n",
+     "from . import lib as v2_lib, domain\n"
+    ]
+   ],
+   "note": "relative imports",
+   "original_sha256": "89d924e5fcdf47abe5f6abb269bb2d958ac4f07be9e834c3a68fd05bca4231db"
+  },
+  {
+   "new": "src/baselines/evokd/recovery_teacher.py",
+   "new_sha256": "1c12fd4da6e9c2d6ca95bb6c10427d046e007c4a2c4d4aa629071d28e6b92cf5",
+   "edits": [],
+   "note": "",
+   "original_sha256": "1c12fd4da6e9c2d6ca95bb6c10427d046e007c4a2c4d4aa629071d28e6b92cf5"
+  },
+  {
+   "new": "src/baselines/evokd/trajectory_stats.py",
+   "new_sha256": "8b02204ba6317bb27f0427461516afc3b379ab96a2ddb3d5b7d872f935919699",
+   "edits": [],
+   "note": "script; run as python -m baselines.evokd.trajectory_stats RUN_DIR",
+   "original_sha256": "8b02204ba6317bb27f0427461516afc3b379ab96a2ddb3d5b7d872f935919699"
+  },
+  {
+   "new": "src/baselines/evokd/run.py",
+   "new_sha256": "6a8e9cb7ecf8829b0c555ad1dee61333ea34a73ecf7fc6f68b30bc1f9eece426",
+   "edits": [
+    [
+     "S = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(S / 'scripts'))\nimport v2_lib, v2_mode, domain\n",
+     "from . import lib as v2_lib, mode as v2_mode, domain\n"
+    ],
+    [
+     "sys.path.insert(0, str(domain.PKG_DIR / 'tests')); import test_final_v1 as T\n        log = []",
+     "from . import dryrun as T\n        log = []"
+    ],
+    [
+     "sys.path.insert(0, str(domain.PKG_DIR / 'tests')); import test_final_v1 as T; teacher = T.FakeTeacher()",
+     "from . import dryrun as T; teacher = T.FakeTeacher()"
+    ],
+    [
+     "from knowledge_first.gpu_isolation import bootstrap_training_command",
+     "from mapsteal.gpu_isolation import bootstrap_training_command"
+    ],
+    [
+     "module='run_v2')",
+     "module='baselines.evokd.run')"
+    ],
+    [
+     "from recovery_teacher import ReplayingTeacher",
+     "from .recovery_teacher import ReplayingTeacher"
+    ]
+   ],
+   "note": "relative imports; test fakes from baselines.evokd.dryrun; isolation re-exec module name",
+   "original_sha256": "294b9d4e8cc91a9017c74e9196c9338665864035ab05c0bb1fa45dcfee965e95"
+  },
+  {
+   "new": "src/baselines/evokd/dryrun.py",
+   "new_sha256": "22f364a4b58897b231b7c9ffc5e0a8a6556ecf17d132775e43fc5b2309459707",
+   "edits": [],
+   "note": "two classes extracted verbatim",
+   "original_sha256": "45241fe5451d1d6d4816d3c143b5c12c47bbe4a4384b4586096516e566e5d405"
+  },
+  {
+   "new": "src/baselines/qedks/trainStudentv21.py",
+   "new_sha256": "879167a35a703e4dd89e90e672355b65444dd3dc12d58c8188483fc77e362340",
+   "edits": [
+    [
+     "from src.",
+     "from baselines.qedks.qsrc."
+    ],
+    [
+     "the unified F2 pipeline",
+     "the shared training pipeline"
+    ]
+   ],
+   "note": "import path only (src -> baselines.qedks.qsrc)",
+   "original_sha256": "b1c0b676ef56c8e7a0bc374578aface694fa021214cd34baaf33b01df92114ea"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/coq/__init__.py",
+   "new_sha256": "57945d3385b18c597feacade2f9e1bb384d24c23c9445167da71fdf7beb56e5f",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "57945d3385b18c597feacade2f9e1bb384d24c23c9445167da71fdf7beb56e5f"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/coq/coq_utils.py",
+   "new_sha256": "eaeb21a6bb813965420c86bfebd862fe20b3ec8821eebd337d3e5879304abe0d",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "eaeb21a6bb813965420c86bfebd862fe20b3ec8821eebd337d3e5879304abe0d"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/correct/__init__.py",
+   "new_sha256": "3b492b64c08477cba0bf9455b709f3463bb50399af56ccc42409125195598264",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "3b492b64c08477cba0bf9455b709f3463bb50399af56ccc42409125195598264"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/correct/untils.py",
+   "new_sha256": "74ef3eede84974748af497f6954b1383a2d56ef1c6dd60cb07f6ea6e87f1b357",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "74ef3eede84974748af497f6954b1383a2d56ef1c6dd60cb07f6ea6e87f1b357"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/data/__init__.py",
+   "new_sha256": "eed2b015874f362ff46978851beac582262cece4369b30f032d711307590b9f2",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "eed2b015874f362ff46978851beac582262cece4369b30f032d711307590b9f2"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/data/dataUtils.py",
+   "new_sha256": "782c44eaa4366a7072434c58c7e1d4d403fbe46dc21d40e5471d865c0d616fe6",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "782c44eaa4366a7072434c58c7e1d4d403fbe46dc21d40e5471d865c0d616fe6"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/followup/__init__.py",
+   "new_sha256": "f8eb70da318d386165f6b28d54dc262e41d4f37d759654f84f97867e9a7548b8",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "f8eb70da318d386165f6b28d54dc262e41d4f37d759654f84f97867e9a7548b8"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/followup/followup.py",
+   "new_sha256": "6d7bd2caaf292c22a5dd083c4df3a500a86c427e39315df0f7be686143a506dd",
+   "edits": [
+    [
+     "from src.",
+     "from baselines.qedks.qsrc."
+    ]
+   ],
+   "note": "import path only",
+   "original_sha256": "414151b3d1802c630ecbcf9db8165f29cfd83a4f7a228b8bc843b72289d214e0"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/student/__init__.py",
+   "new_sha256": "b3481e49877855615ba1ae7a3683959304c224961293fd01e1d54657c87fd57c",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "b3481e49877855615ba1ae7a3683959304c224961293fd01e1d54657c87fd57c"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/student/askques.py",
+   "new_sha256": "389291d5b99fac7869bf2e2e4a81ba4a9b9e77923c7cd21551e8a803711c05aa",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "389291d5b99fac7869bf2e2e4a81ba4a9b9e77923c7cd21551e8a803711c05aa"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/student/fast_gen.py",
+   "new_sha256": "9f7d1c871cdefa3f1acd0c5636568efd7e73820e2cf744f580298f64f37e9bad",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "9f7d1c871cdefa3f1acd0c5636568efd7e73820e2cf744f580298f64f37e9bad"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/student/models_table.py",
+   "new_sha256": "6da5e2baf767aea3b2d3ebdfe5fc071b00bd2a0fe20f6944276245a4cabf6a1b",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "6da5e2baf767aea3b2d3ebdfe5fc071b00bd2a0fe20f6944276245a4cabf6a1b"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/student/studentModel.py",
+   "new_sha256": "d8845466216e190a08d151ccf904488d24325e8e8f9a3c6ec5f19d284c9d7147",
+   "edits": [
+    [
+     "from src.",
+     "from baselines.qedks.qsrc."
+    ]
+   ],
+   "note": "import path only",
+   "original_sha256": "d6c00226835e17a872c57e4a6c3a38d074a7e95afc90356212688f0fe937d84b"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/teacher/__init__.py",
+   "new_sha256": "0dc4fcb22c3fc4aeb02bc9da277ad40cfc4401c952f49e1c95e5ddee8130da8e",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "0dc4fcb22c3fc4aeb02bc9da277ad40cfc4401c952f49e1c95e5ddee8130da8e"
+  },
+  {
+   "new": "src/baselines/qedks/qsrc/teacher/teacherGPT4API.py",
+   "new_sha256": "46f174073a17b311be8dc10624056ac50d0a789b1e7eaed277819bab5f59cfff",
+   "edits": [],
+   "note": "verbatim",
+   "original_sha256": "46f174073a17b311be8dc10624056ac50d0a789b1e7eaed277819bab5f59cfff"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "coq_min_len_words": 100,
+ "correction_rows": 147,
+ "diversification": {
+  "enabled": true,
+  "every": 25,
+  "forced_iteration_share": 0.119,
+  "forced_iterations": 42,
+  "forced_qa_rows": 60,
+  "forced_qa_share": 0.12,
+  "pending_unexecuted_targets": 0,
+  "targets_executed": 42,
+  "targets_selected": 42,
+  "targets_skipped": 0,
+  "top_n": 3,
+  "triggers": 14,
+  "triggers_skipped": 0
+ },
+ "domain": "cyber",
+ "empty_answers": 0,
+ "explored": 353,
+ "frontier_exhausted": false,
+ "iterations": 353,
+ "main_rows": 353,
+ "qa_rows": 500,
+ "queue_remaining": 603,
+ "reached_target": true,
+ "refinement": {
+  "accepted_after_retry": 213,
+  "attempts_total": 1234,
+  "entities": 951,
+  "fallback_to_template": 6,
+  "first_attempt_accepted": 732,
+  "rejection_reasons": {
+   "contains_what_is": 23,
+   "entity_missing": 205,
+   "instruction_echo": 5,
+   "missing_any": 2,
+   "template_collapse": 7,
+   "weak_form": 196
+  },
+  "slots_differ_from_template": 948,
+  "slots_total": 3804
+ },
+ "resumed": false,
+ "seed": 44,
+ "stats": {
+  "correction_rows": 147,
+  "correction_triggered": 147,
+  "div_targets_executed": 42,
+  "div_targets_selected": 42,
+  "div_triggers": 14,
+  "forced_iterations": 42,
+  "forced_qa_rows": 60,
+  "main_rows": 353,
+  "selected_ans_entity": 343,
+  "selected_seed": 10
+ },
+ "target_qa": 500,
+ "teacher": {
+  "cost_usd": 0.868836,
+  "input_tokens": 231930,
+  "n_requests": 853,
+  "output_tokens": 50622
+ },
+ "teacher_requests_by_kind": {
+  "correction": {
+   "cost_usd": 0.205488,
+   "input_tokens": 54452,
+   "output_tokens": 12073,
+   "requests": 147
+  },
+  "entity_extraction": {
+   "cost_usd": 0.338894,
+   "input_tokens": 139155,
+   "output_tokens": 7573,
+   "requests": 352
+  },
+  "main_qa": {
+   "cost_usd": 0.320104,
+   "input_tokens": 38128,
+   "output_tokens": 30481,
+   "requests": 353
+  },
+  "roots": {
+   "cost_usd": 0.00435,
+   "input_tokens": 195,
+   "output_tokens": 495,
+   "requests": 1
+  }
+ },
+ "unique_questions": 353,
+ "wall_seconds_this_invocation": 5173.5
+}

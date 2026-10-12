@@ -1,0 +1,44 @@
+{
+ "variant": "QEDKS-Adapted",
+ "domain": "cyb",
+ "size": "9B",
+ "acquisition_seed": 43,
+ "teacher": "gpt-4.1",
+ "student": "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+ "code_commit": "f84f02037655c5ed9e97ff759e299bf6547a664f",
+ "code_sha256": {
+  "qedks/trainStudentv21.py": "b1c0b676ef56c8e7a0bc374578aface694fa021214cd34baaf33b01df92114ea",
+  "qedks/src/student/askques.py": "389291d5b99fac7869bf2e2e4a81ba4a9b9e77923c7cd21551e8a803711c05aa",
+  "qedks/src/student/studentModel.py": "d6c00226835e17a872c57e4a6c3a38d074a7e95afc90356212688f0fe937d84b",
+  "qedks/src/student/fast_gen.py": "9f7d1c871cdefa3f1acd0c5636568efd7e73820e2cf744f580298f64f37e9bad",
+  "qedks/src/student/models_table.py": "6da5e2baf767aea3b2d3ebdfe5fc071b00bd2a0fe20f6944276245a4cabf6a1b",
+  "qedks/src/teacher/teacherGPT4API.py": "46f174073a17b311be8dc10624056ac50d0a789b1e7eaed277819bab5f59cfff",
+  "qedks/src/data/dataUtils.py": "782c44eaa4366a7072434c58c7e1d4d403fbe46dc21d40e5471d865c0d616fe6",
+  "qedks/src/followup/followup.py": "414151b3d1802c630ecbcf9db8165f29cfd83a4f7a228b8bc843b72289d214e0",
+  "qedks/src/coq/coq_utils.py": "eaeb21a6bb813965420c86bfebd862fe20b3ec8821eebd337d3e5879304abe0d",
+  "qedks/src/correct/untils.py": "74ef3eede84974748af497f6954b1383a2d56ef1c6dd60cb07f6ea6e87f1b357"
+ },
+ "teacher_totals": {
+  "requests": 841,
+  "input_tokens": 242151,
+  "output_tokens": 57281,
+  "cost_usd": 0.9425
+ },
+ "requests_by_kind": {
+  "roots": 1,
+  "main_qa": 341,
+  "correction": 159,
+  "entity_extraction": 340
+ },
+ "output_sha256": {
+  "corpus_raw.jsonl": "546b7d2551149428f1bffe663ff7fb55151eab6d8f18d086fd616e909b21b089",
+  "training_corpus.jsonl": "579927c290fd85b72feff0f0f4e83d009e3b9d7fdfd858a88affbe1f5c8f43fd",
+  "teacher_ledger.jsonl": "c517d30aef685eecdd89da23d65facc5ecace3c75a31e04d65b0bf6cbca448ce",
+  "structured_log.jsonl": "aaff210651b38dd3c26ba923637b4f1bfbea914b6fcaad4a81fd95a153633927",
+  "diversification_log.jsonl": "d2d745e8113ed6e7b0ee0d86d7b8d8534e1ae403f42ca4478d34786ee326fb7b",
+  "refine_log.jsonl": "46759ae12153679373a841cbebca30a523eff8da9d55bfdf007c2e345152ff76",
+  "summary.json": "9a721e365e4e0ec89685132ba4df37e3528c8ba894ea985db975f9f76e52f0ba",
+  "roots.json": "c09b03b3f8d0e3e8153bfb28e3c091e3aca315859440e52c9276cd5870882261"
+ },
+ "wall_seconds": 7688.0
+}

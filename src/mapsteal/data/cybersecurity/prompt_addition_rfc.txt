@@ -1,0 +1,48 @@
+DIRECTION REGISTRY (per root; maintained by you inside this one response and by deterministic bookkeeping code)
+
+The registry below lists the knowledge directions that already exist for THIS root. Each direction was created earlier by you (its name and short definition are in your own words). The counts show how many targets of that direction have already been answered ("executed") and how many have been planned but not yet answered ("pending"). The registry may be empty for a fresh root.
+
+{direction_registry}
+
+For EACH child you propose (Object / Facet / Condition / TargetSpec / Decision construction rules are UNCHANGED), additionally provide:
+1. "direction_relation": exactly "EXISTING" or "NEW".
+2. "direction_id": if EXISTING, the exact id from the registry above (for example "D03"); if NEW, the literal string "NONE".
+3. "new_direction_name": if NEW, a short name (2-6 words) in your own words; if EXISTING, the literal string "NONE".
+4. "new_direction_definition": if NEW, one sentence defining the kind of knowledge this direction covers; if EXISTING, the literal string "NONE".
+
+Rules: assign a child to an EXISTING direction when it is substantially the same knowledge direction (judge by the kind of knowledge need, not by the words used). Create a NEW direction only when none of the existing directions adequately captures the child's target; do not create a NEW direction merely to rephrase an existing one, and make a new direction reusable for further children rather than a restatement of a single child.
+
+Continue to propose candidates exactly as you would today, in each of the
+four categories (new_objects, new_facets, applicability_conditions,
+new_targets): propose as many or as few candidates in each category as
+you judge genuinely useful and applicable, exactly as today -- there is
+NO required or expected count of exactly one per category, and no upper
+limit imposed by this instruction. If more than one genuinely useful,
+applicable candidate exists within a category, propose all of them, each
+with its own direction assignment (direction_relation, direction_id,
+new_direction_name, new_direction_definition). Do NOT reduce how many candidates you propose in
+order to only suggest "NEW"
+ones, and do NOT reduce your candidate count because of this labeling
+extension -- propose whatever is genuinely useful, honestly labeled, at
+whatever volume you naturally would today. When more than one genuinely
+useful, applicable candidate exists, it is fine for some to be NEW and
+others EXISTING -- proposing an EXISTING continuation is entirely
+appropriate and expected when it is genuinely the most useful next step.
+
+FACET / CONDITION TARGET RULE
+
+Facet and Condition are optional search perspectives, not required output slots.
+
+Propose a Facet or Condition child only when it leads to a distinct useful question whose substantive answer would differ meaningfully from the parent target.
+
+For every Facet or Condition child, the TargetSpec must explicitly express the new facet or condition. Do not copy the parent or ancestor TargetSpec unchanged.
+
+The TargetSpec should be understandable as a standalone knowledge target and should make clear what new aspect, condition, population, context, comparison, or circumstance changes the answer.
+
+A new Facet or Condition written only in metadata is not sufficient if the TargetSpec would still ask substantially the same question.
+
+Ensure the selected Decision/operator is semantically compatible with the wording of the TargetSpec.
+
+If no distinct useful Facet or Condition question exists, return no proposal of that type.
+
+Return strict JSON of the same overall shape as before (answer, explanation, new_objects, new_facets, applicability_conditions, new_targets, reusable_knowledge), with each child additionally carrying direction_relation, direction_id, new_direction_name and new_direction_definition.

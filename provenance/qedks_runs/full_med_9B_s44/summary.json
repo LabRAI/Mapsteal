@@ -1,0 +1,95 @@
+{
+ "coq_min_len_words": 100,
+ "correction_rows": 118,
+ "diversification": {
+  "enabled": true,
+  "every": 25,
+  "forced_iteration_share": 0.1178,
+  "forced_iterations": 45,
+  "forced_qa_rows": 56,
+  "forced_qa_share": 0.112,
+  "pending_unexecuted_targets": 0,
+  "targets_executed": 45,
+  "targets_selected": 45,
+  "targets_skipped": 0,
+  "top_n": 3,
+  "triggers": 15,
+  "triggers_skipped": 0
+ },
+ "domain": "medical",
+ "empty_answers": 0,
+ "explored": 382,
+ "frontier_exhausted": false,
+ "iterations": 382,
+ "main_rows": 382,
+ "qa_rows": 500,
+ "queue_remaining": 882,
+ "reached_target": true,
+ "refinement": {
+  "accepted_after_retry": 583,
+  "attempts_total": 2763,
+  "entities": 1264,
+  "fallback_to_template": 173,
+  "first_attempt_accepted": 508,
+  "rejection_reasons": {
+   "contains_what_is": 1,
+   "copy_example": 11,
+   "cross_domain_leak": 2,
+   "entity_missing": 52,
+   "missing_any": 935,
+   "template_collapse": 4,
+   "weak_form": 826
+  },
+  "slots_differ_from_template": 2836,
+  "slots_total": 5056
+ },
+ "resumed": false,
+ "seed": 44,
+ "stats": {
+  "correction_rows": 118,
+  "correction_triggered": 118,
+  "div_targets_executed": 45,
+  "div_targets_selected": 45,
+  "div_triggers": 15,
+  "forced_iterations": 45,
+  "forced_qa_rows": 56,
+  "main_rows": 382,
+  "selected_ans_entity": 376,
+  "selected_seed": 6
+ },
+ "target_qa": 500,
+ "teacher": {
+  "cost_usd": 1.295248,
+  "input_tokens": 433660,
+  "n_requests": 882,
+  "output_tokens": 53491
+ },
+ "teacher_requests_by_kind": {
+  "correction": {
+   "cost_usd": 0.186828,
+   "input_tokens": 55534,
+   "output_tokens": 9470,
+   "requests": 118
+  },
+  "entity_extraction": {
+   "cost_usd": 0.726796,
+   "input_tokens": 312710,
+   "output_tokens": 12672,
+   "requests": 381
+  },
+  "main_qa": {
+   "cost_usd": 0.37711,
+   "input_tokens": 65083,
+   "output_tokens": 30868,
+   "requests": 382
+  },
+  "roots": {
+   "cost_usd": 0.004514,
+   "input_tokens": 333,
+   "output_tokens": 481,
+   "requests": 1
+  }
+ },
+ "unique_questions": 381,
+ "wall_seconds_this_invocation": 10107.3
+}

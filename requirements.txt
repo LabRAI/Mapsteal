@@ -1,0 +1,15 @@
+# Versions recorded in the original training manifests (data/provenance/**/run_manifest.json): torch 2.13.0+cu130, transformers 5.14.1, peft 0.19.1.
+# Mode A (aggregation) needs NONE of these: it is standard-library only (Python >= 3.9).
+torch==2.13.0
+transformers==5.14.1
+peft==0.19.1
+numpy
+openai>=1.0          # Mode C only (GPT-4.1 Teacher)
+safetensors
+accelerate
+datasets
+sentence-transformers   # QEDKS acquisition (MiniLM embedder)
+python-Levenshtein      # QEDKS
+# QEDKS' own pinned dependency set: archive/provenance/qedks/requirements.txt
+# optional, presentation only (terminal tables of `run.sh --aggregate-only`); aggregation works without it:
+# rich

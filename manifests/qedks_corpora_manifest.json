@@ -1,0 +1,164 @@
+{
+ "qedks_cybersecurity_2B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_2B_s42.jsonl",
+  "sha256": "b940df9c29984fe4806aab5c1e273ace80b9a5b583af516be70b17175b8c2541",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "2B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_2B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_2B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_2B_s43.jsonl",
+  "sha256": "0d303a5dab54448c2489aa9742d6f0206fe4def205b4d144efc459fd3dd35502",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "2B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_2B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_2B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_2B_s44.jsonl",
+  "sha256": "376207e0f718510248aa39c370101766f776d02085c8b63802b5fccf01d6a5f5",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "2B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_2B_s44/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_4B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_4B_s42.jsonl",
+  "sha256": "935c01e2dc3be8fa4e4b657de587888d20551cc2766f3b7c5ea3eea342278a37",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "4B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_4B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_4B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_4B_s43.jsonl",
+  "sha256": "828c0d12c168d0a7fe5dae6958d60342d583094050c1e14ebd6e39b7f9845663",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "4B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_4B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_4B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_4B_s44.jsonl",
+  "sha256": "1931f467db53d53a5b5ae6ae46af7ff9f3d196a1675807f6740d7d28d5df33fc",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "4B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_4B_s44/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_9B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_9B_s42.jsonl",
+  "sha256": "e39004e858ef00da3b2783f9a99bfb47851e67a6991b4db3e2c90a63bb64b42d",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "9B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_9B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_9B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_9B_s43.jsonl",
+  "sha256": "579927c290fd85b72feff0f0f4e83d009e3b9d7fdfd858a88affbe1f5c8f43fd",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "9B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_9B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_cybersecurity_9B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_cybersecurity_9B_s44.jsonl",
+  "sha256": "9276917689b441c6b8e20d7b24e1e944d6907fc1a72121d8a7f4beb5957c4a65",
+  "rows": 500,
+  "domain": "cybersecurity",
+  "student": "9B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_cyb_9B_s44/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_2B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_2B_s42.jsonl",
+  "sha256": "682b46f783b4146f80ccb1a63c289a4d3710c7d7a97188fa022b499f40d4aed7",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "2B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_med_2B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_2B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_2B_s43.jsonl",
+  "sha256": "9b04cb63f984f49020dd5b6e607b8f534f8f17984f0120f9288f80c12c640ac7",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "2B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_med_2B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_2B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_2B_s44.jsonl",
+  "sha256": "2321304897251807b7b34041cef77131dfc317022cb3a58d05def419359b29ed",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "2B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_med_2B_s44/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_4B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_4B_s42.jsonl",
+  "sha256": "6134beb6f836c5e2f44112f026f6eeafed3afb03d61373ee0c56a71704d15690",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "4B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_med_4B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_4B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_4B_s43.jsonl",
+  "sha256": "18d50d2a3f7200f6dad21cee939b656bf735d8fdb14188717235658b5b13d122",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "4B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_med_4B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_4B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_4B_s44.jsonl",
+  "sha256": "851f63fc33afc98c43ed7cab11d460f109a3db4476aa57281a314a92e8f24b29",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "4B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_med_4B_s44/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_9B_s42": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_9B_s42.jsonl",
+  "sha256": "d4332f8ac146a8680da09c5a089fcffc2b24f6d6a631937805c1845b4eaa5970",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "9B",
+  "acquisition_seed": 42,
+  "acq_manifest": "provenance/qedks_runs/full_med_9B_s42/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_9B_s43": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_9B_s43.jsonl",
+  "sha256": "605a74b3d4d8c79b7633132f292938d80587aea4bf282eef4d41d6b3bdcf18f1",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "9B",
+  "acquisition_seed": 43,
+  "acq_manifest": "provenance/qedks_runs/full_med_9B_s43/ACQ_MANIFEST.json"
+ },
+ "qedks_medicine_9B_s44": {
+  "path": "data/frozen_corpora/qedks/qedks_medicine_9B_s44.jsonl",
+  "sha256": "fa566234289fc7843b6a1fbc294aa3346bbc64f98b6ccf55fbdf3a73e557dd53",
+  "rows": 500,
+  "domain": "medicine",
+  "student": "9B",
+  "acquisition_seed": 44,
+  "acq_manifest": "provenance/qedks_runs/full_med_9B_s44/ACQ_MANIFEST.json"
+ }
+}

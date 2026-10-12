@@ -1,0 +1,76 @@
+{
+ "device": "cuda:0",
+ "seed": 42,
+ "acquisition_seed": 42,
+ "domain": "cyb",
+ "base_model": "Qwen/Qwen3.5-4B",
+ "base_model_id": "Qwen/Qwen3.5-4B",
+ "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "arm": "QEDKS_CYB_4B_AS42_TS42",
+ "dataset": "<research-archive>/training_corpus.jsonl",
+ "dataset_sha256": "935c01e2dc3be8fa4e4b657de587888d20551cc2766f3b7c5ea3eea342278a37",
+ "rows": 500,
+ "fresh_base": true,
+ "init_adapter": null,
+ "device_provenance": {
+  "requested_torch_device": "cuda:0",
+  "requested_physical_uuid": "<gpu-uuid>",
+  "runtime_visible_devices": [
+   "<gpu-uuid>"
+  ],
+  "runtime_torch_device": "cuda:0",
+  "runtime_physical_uuid": "<gpu-uuid>",
+  "runtime_device_count": 1,
+  "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+  "parallelism": "single_gpu",
+  "world_size": 1,
+  "cuda_visible_devices": "<gpu-uuid>",
+  "isolation_verified": true
+ },
+ "trainable_parameters": 18087936,
+ "adapted_module_types": [
+  "down_proj",
+  "gate_proj",
+  "up_proj"
+ ],
+ "observed_training": {
+  "metrics": {
+   "train_runtime": 1474.4825,
+   "train_samples_per_second": 0.678,
+   "train_steps_per_second": 0.085,
+   "total_flos": 2537432162709504.0,
+   "train_loss": 0.8420238185023504,
+   "epoch": 2.0
+  },
+  "device_provenance": {
+   "requested_torch_device": "cuda:0",
+   "requested_physical_uuid": "<gpu-uuid>",
+   "runtime_visible_devices": [
+    "<gpu-uuid>"
+   ],
+   "runtime_torch_device": "cuda:0",
+   "runtime_physical_uuid": "<gpu-uuid>",
+   "runtime_device_count": 1,
+   "runtime_gpu_name": "NVIDIA A100-PCIE-40GB",
+   "parallelism": "single_gpu",
+   "world_size": 1,
+   "cuda_visible_devices": "<gpu-uuid>",
+   "isolation_verified": true
+  },
+  "observed_optimizer_steps": 126,
+  "trainable_parameter_tensors": 192,
+  "initial_adapter_sha256": "f4dcc57dbd495786ff4f9da3438c6088b4edde7541a6809c7b6017e39b10928f",
+  "fresh_init_verified": true,
+  "warm_started": false
+ },
+ "expected_optimizer_steps": 126,
+ "train_seconds": 1482.2,
+ "peak_gpu_memory_allocated_gb": 9.29,
+ "adapter_sha256": "076893476da8bbfa4c9285e1e1078bf3b2a8a6947776a6ece8e86d974e3403dc",
+ "recipe": "selected training configuration: lr 3e-4, 2 epochs, r16/alpha32, dropout .05, MLP-only (gate/up/down), linear, warmup 0",
+ "library_versions": {
+  "torch": "2.13.0+cu130",
+  "transformers": "5.14.1",
+  "peft": "0.19.1"
+ }
+}
