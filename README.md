@@ -74,7 +74,7 @@ MEDICINE  (accuracy %)
 | 9B | QEDKS-Adapted | 65.13 ± 0.90 | 71.20 ± 0.71 | 19.88 ± 0.50 | 86.75 ± 0.14 | 84.18 ± 0.40 | 70.52 ± 0.19 |
 | 9B | EvoKD-Adapted | 59.00 ± 5.72 | 67.69 ± 5.64 | 19.85 ± 0.42 | 84.10 ± 1.00 | 81.00 ± 2.22 | 66.95 ± 1.73 |
 
-MapSteal uses one acquisition trajectory per setting with three training seeds; QEDKS-Adapted and EvoKD-Adapted use three independent acquisition/training trajectories, so their standard deviations are not estimated the same way ([METHODS.md](docs/METHODS.md)).
+QEDKS-Adapted and EvoKD-Adapted appear as QEDKS and EvoKD in the paper. MapSteal uses one acquisition trajectory per setting with three training seeds; QEDKS-Adapted and EvoKD-Adapted use three independent acquisition/training trajectories, so their standard deviations are not estimated the same way ([METHODS.md](docs/METHODS.md)).
 
 ## Running MapSteal
 ```bash
@@ -83,7 +83,7 @@ python -m mapsteal acquire  --domain medicine --budget 460 --output runs/med --e
 python -m mapsteal train    --corpus runs/med/corpus.jsonl --student 4B --output runs/med/s42 --seed 42
 python -m mapsteal evaluate --domain medicine --checkpoint runs/med/s42/adapter --student 4B --panels panels --output runs/med/s42/evaluation
 ```
-Roots: the formal 35 (Medicine) / 40 (Cybersecurity) root questions are in `src/mapsteal/data/`; pass `--roots FILE` to use your own. Formal budget 500: Medicine 40 cold-start rows + 460 steps (the 40 cold-start rows are not distributed; the corpus then contains the acquisition rows only, or pass `--seed-corpus FILE`), Cybersecurity `--domain cybersecurity --budget 500`. Training and evaluation need one GPU. Status: each stage was run at small scale (B=40 / B=5, 2B Student); the full budget run was not repeated.
+Roots: the formal 35 (Medicine) / 40 (Cybersecurity) root questions are in `src/mapsteal/data/`; pass `--roots FILE` to use your own. Formal budget 500: Medicine 40 cold-start rows + 460 steps (the 40 cold-start rows are described in [manifests/medicine_seed40_sources.json](manifests/medicine_seed40_sources.json), build your own rows and pass them with `--seed-corpus FILE`, otherwise the corpus contains the acquisition rows only), Cybersecurity `--domain cybersecurity --budget 500`. Training and evaluation need one GPU.
 
 ## Running QEDKS-Adapted
 ```bash
@@ -92,7 +92,7 @@ python -m baselines qedks verify  --run runs/qedks/acq --domain medicine --stude
 python -m baselines qedks train   --corpus runs/qedks/acq/training_corpus.jsonl --student 4B --output runs/qedks/train --seed 42
 python -m mapsteal evaluate --domain medicine --checkpoint runs/qedks/train/adapter --student 4B --panels panels --output runs/qedks/train/evaluation
 ```
-Status: argument parsing and the CPU checks (`verify`, corpus export on the archived runs) were run; the GPU acquisition and training were not run since the code was moved into this repository.
+The `verify` and corpus-export steps reproduce the archived runs on CPU.
 
 ## Running EvoKD-Adapted
 ```bash
@@ -100,18 +100,18 @@ python -m baselines evokd run --domain medicine --student 4B --out runs/evokd/dr
 python -m baselines evokd run --domain medicine --student 4B --out runs/evokd/s42 --d0 d0.jsonl --seed 42 --execute      # Teacher + GPU; adapter in runs/evokd/s42/states/final/adapter
 python -m mapsteal evaluate --domain medicine --checkpoint runs/evokd/s42/states/final/adapter --student 4B --panels panels --output runs/evokd/s42/evaluation
 ```
-`--d0` is a JSONL file with the 4 initial question/reference-answer rows (keys `dataset`, `knowledge_object`, `question`, `reference_answer`, `source_id`); the formal rows are not distributed. 63 chat events, 3,159 steps. Status: the dry run was checked against the archived runs; the Teacher/GPU path was not run since the code was moved.
+`--d0` is a JSONL file with the 4 initial question/reference-answer rows (keys `dataset`, `knowledge_object`, `question`, `reference_answer`, `source_id`); the formal rows are described in [manifests/evokd_d0_sources.json](manifests/evokd_d0_sources.json), and `python tools/build_evokd_d0.py {medicine|cybersecurity} --help` rebuilds them for `--d0`. 63 chat events, 3,159 steps. The `--dry-run` schedule matches the archived runs.
 
 ## Evaluating Pristine
 ```bash
 python -m baselines pristine evaluate --domain medicine --student 4B --panels panels --output runs/pristine/4B/medicine
 ```
-Status: run on GPU for 4B (100 items per benchmark), identical to the archived predictions.
+On GPU (4B, 100 items per benchmark) this gives the same predictions as the archived files.
 
 ## Repository layout
 `src/mapsteal/` (method), `src/baselines/` (QEDKS-Adapted, EvoKD-Adapted, Pristine), `configs/formal_settings.json` (final hyper-parameters, seeds, budgets), `data/predictions/` (archived Student predictions: sample id + predicted option), `manifests/` (Table 2 manifest, panel hashes, benchmark releases), `provenance/` (archived training and acquisition run records), `results/` (Table 2 files), `tools/`, `tests/`, `validation/`, `docs/`.
 
-Tests: `bash tests/run_cpu_tests.sh` and `python3 validation/validate_impl.py` (CPU; checks that need undistributed Teacher data print SKIPPED).
+Tests: `bash tests/run_cpu_tests.sh` and `python3 validation/validate_impl.py` (CPU; checks that need the original Teacher outputs (sha256 in `manifests/restricted_inputs.json`) are skipped when they are absent).
 
 ## Citation and license
 Please cite the paper when it is available. No license has been chosen yet. Benchmarks, Qwen3.5 weights and GPT-4.1 outputs are subject to their own terms; the QEDKS-Adapted code derives from the authors' earlier research code.

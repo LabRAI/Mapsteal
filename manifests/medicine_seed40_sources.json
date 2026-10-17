@@ -1,0 +1,1006 @@
+{
+ "schema": "medicine-seed40-sources-v1",
+ "note": "The 40 Medicine cold-start rows (Seed40): 10 hand-written questions per source dataset (MedQA train, MedMCQA train, MMLU-Med dev, PubMedQA pqa_labeled train), each answered by a Teacher in an earlier lineage. Source identifiers and sha256 are recorded; question and answer texts are not distributed. The questions are rewritten by hand (no model) and can be rewritten again from the source items; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15, but how the rows were first produced and the generation prompt are not recorded in this repository, so the answers cannot be regenerated as they were. A corpus without Seed40 is the acquisition rows only (MapSteal `corpus` without --seed-corpus).",
+ "rows": [
+  {
+   "index": 0,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:9812",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 9812
+   },
+   "knowledge_object": "pulmonary tuberculosis",
+   "tag": "histology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed clinical vignette framing, 'which of the following' option dependency, and the 'reactivated' qualifier not implied by KnowledgeObject/Tag alone",
+    "text_distributed": false,
+    "sha256": "8dd905f1f0080f9c32a43bb3125040ffa4b6a8d578df7109e025042c4e2ce4b1"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "8c9db26f057accb0e43f9f97d630472b741ff8a6c29e8c1e741b54aadd097bdd"
+   }
+  },
+  {
+   "index": 1,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:1051",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 1051
+   },
+   "knowledge_object": "randomized controlled trial analysis",
+   "tag": "study design",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing and option-dependent phrasing",
+    "text_distributed": false,
+    "sha256": "df01323ed77ee0a0df56e630fc09f3c27340a565a3118cd1ff6c7f4c132fcb65"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "1c7d15ab8cd8b6109b3e02a5ac5b14ec0cb25927e20d090bd3ff1f3eae98d597"
+   }
+  },
+  {
+   "index": 2,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:7409",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 7409
+   },
+   "knowledge_object": "genital herpes in pregnancy",
+   "tag": "obstetric management",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing and option-dependent phrasing",
+    "text_distributed": false,
+    "sha256": "e8fafa6ee340ee49ed9605ebf9b4c84f6e67756eb22163bad91dba7df37ba0be"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "29ca1b3e1baaca16b8bcfb4a99b4b15f9e7bedccd6c684ef2c6d595732162f0c"
+   }
+  },
+  {
+   "index": 3,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:8351",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 8351
+   },
+   "knowledge_object": "alcohol-related electrolyte disturbance",
+   "tag": "pharmacotherapy",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing, option-dependent phrasing, and specific exam findings (carpopedal spasm, hyperreflexia, cramping) not represented by KnowledgeObject/Tag",
+    "text_distributed": false,
+    "sha256": "ee7660c1f912cda768ef038a56c14e7ffa314b8ff2d83dd059072b7462d663a5"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "14a6a0cf4fabff8525f75b386c5af2444355da36a13654aacf5d3480bf5e0e34"
+   }
+  },
+  {
+   "index": 4,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:3775",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 3775
+   },
+   "knowledge_object": "gout",
+   "tag": "joint fluid analysis",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - condensed vignette while preserving the diagnostic-test intent",
+    "text_distributed": false,
+    "sha256": "8983db7c748c6356b4d0ab767c0ac789d3c94102152ae40dbbf1d2f6d354f1c1"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "100d16ce9fe3c1c3f32d6fb4c4c9e95ec0d86d497fb9f404831a428b73cd534f"
+   }
+  },
+  {
+   "index": 5,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:5407",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 5407
+   },
+   "knowledge_object": "prostate exam finding",
+   "tag": "oncology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing, option-dependent phrasing, and the unrelated syncope detail not represented by KnowledgeObject/Tag",
+    "text_distributed": false,
+    "sha256": "2b3e70e59ea1b15925f2eeb2524e3118332bb1e061646bc89b4162442796c21d"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "9e0c1bf22343ad26b1c10eefd2516003ea7c5400ece0bf70e16c7cd4cff4d17e"
+   }
+  },
+  {
+   "index": 6,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:2200",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 2200
+   },
+   "knowledge_object": "thiazide diuretics",
+   "tag": "mechanism",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing; also removed the side-effect list (hypokalemia/metabolic alkalosis/hyperglycemia/hyperlipidemia/hyperuricemia/hypercalcemia), which named the class only indirectly via hidden facts rather than directly from KnowledgeObject/Tag",
+    "text_distributed": false,
+    "sha256": "bb48c75bb4835b76fe21ecd1505c0c8475747c55eb10c6a5d32725993e6ed70d"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "7b84458b87c08592fb5d0eb214637af072ab03f8c9377b588f514fd559352fb0"
+   }
+  },
+  {
+   "index": 7,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:2719",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 2719
+   },
+   "knowledge_object": "somatostatin",
+   "tag": "cellular source",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing, option-dependent phrasing, and the octreotide/portal-pressure detail; simplified KnowledgeObject to somatostatin and aligned Tag with the actual target (cellular source), since 'pharmacology mechanism' did not match a question about a hormone's cellular origin",
+    "text_distributed": false,
+    "sha256": "e1312c48bb5f0a795af00cad625a52ad62217fa79acfca9b6418be3c0c3d8640"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "32900962b8f9879e49364315c789f36ce4a4f78ee866e8a6831bb36aad8b3fb3"
+   }
+  },
+  {
+   "index": 8,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:4485",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 4485
+   },
+   "knowledge_object": "chronic hepatitis B",
+   "tag": "pharmacotherapy",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing and option-dependent phrasing",
+    "text_distributed": false,
+    "sha256": "ac7bbf0cb3333069d5464e1fb4a52c53976fd082422a571512b71a31bc678430"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "90a9abd4a30b3f6ea87d3d23f210f8bb10ec0100295f1c0acc13cf8ed2436159"
+   }
+  },
+  {
+   "index": 9,
+   "dataset": "MedQA",
+   "split": "train",
+   "source_id": "medqa:train:3818",
+   "loader": {
+    "hf_dataset": "mkieffer/MedQA-USMLE",
+    "config": null,
+    "split": "train",
+    "gold": "options[answer] (answer is a letter A-E)",
+    "index": 3818
+   },
+   "knowledge_object": "lac operon regulation",
+   "tag": "mechanism",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed experiment-vignette framing and option-dependent phrasing",
+    "text_distributed": false,
+    "sha256": "b825cb43cec8f44a4ec1f06c6f9dbcd3de3790ea0e80002b2e0e2bc29216391d"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "d81b88bd5837d926f3be462a669f08539523c041855d7fd77453ec7307a16fb9"
+   }
+  },
+  {
+   "index": 10,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:109607",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 109607
+   },
+   "knowledge_object": "cerebrovascular accident",
+   "tag": "etiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=false - already self-contained fill-in-blank; only punctuation normalized",
+    "text_distributed": false,
+    "sha256": "b3f502b2fec8c3c666d8e73d36b96a9728e2e387ef82f9071235861c9098de8a"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "2d07ad50bbf32ac5a32f429925ed477805a2234253f15819dce463896ad3fe02"
+   }
+  },
+  {
+   "index": 11,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:22607",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 22607
+   },
+   "knowledge_object": "cholestatic liver disease",
+   "tag": "diagnosis",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - condensed vignette into a self-contained diagnostic question",
+    "text_distributed": false,
+    "sha256": "9673f6768488edb4c9a96f7577cf65a09b893e42b6f85e97405637925a4a0c7b"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "dfdfec5e57a8877bb52a9142d28200cf060a44377ab8b44499b0d768fc916b3a"
+   }
+  },
+  {
+   "index": 12,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:16560",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 16560
+   },
+   "knowledge_object": "pheochromocytoma crisis",
+   "tag": "pharmacotherapy",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed MCQ-answer framing, kept the clinical question self-contained",
+    "text_distributed": false,
+    "sha256": "75b89e99a214948580165d7b53f800e22056d289371ecf66f68a9c0774b36054"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "67c7137588301be6826ae8994833b40188430e6e1b714d3c23973ff9e9f0d9b1"
+   }
+  },
+  {
+   "index": 13,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:131706",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 131706
+   },
+   "knowledge_object": "diabetes mellitus diagnosis",
+   "tag": "diagnostic criteria",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=false - already self-contained fill-in-blank; rephrased into a full question",
+    "text_distributed": false,
+    "sha256": "3ec904afc761f348257943ca8d68e1fbc38a486b4bcf9250e820c65241b739b8"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "130dcda2d84b7fe300ac9fa485a72f6b569befa34c75e3476df52b9e87dcd247"
+   }
+  },
+  {
+   "index": 14,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:96273",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 96273
+   },
+   "knowledge_object": "catecholamines",
+   "tag": "physiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=false - already self-contained fill-in-blank; rephrased into a full question",
+    "text_distributed": false,
+    "sha256": "38f43a05512608b817efe28ec70682f1988e6e3ec29a2abf39f32d10c7eb5d79"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "5c103af6ac8b39c439f5760d1434859b086eebe7fc51825600cb2364654b1c51"
+   }
+  },
+  {
+   "index": 15,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:170491",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 170491
+   },
+   "knowledge_object": "Burkitt lymphoma",
+   "tag": "etiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=false - already self-contained fill-in-blank; rephrased into a full question",
+    "text_distributed": false,
+    "sha256": "c8b8b2772ff70cbfc1c8bd405c15ddabebd32b373d60e9c2511d205602ef0aa2"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "3cdeca0046da1b3e2461274b9c6a35d01a9f8e87d171db542be9483b5b78b555"
+   }
+  },
+  {
+   "index": 16,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:152650",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 152650
+   },
+   "knowledge_object": "ventilatory response to hypoxia",
+   "tag": "physiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - original was a sentence fragment continuing directly into MCQ options",
+    "text_distributed": false,
+    "sha256": "1305f8d2fab95a5a966fd211d91b45af950fa29276fdf97db1787aa1a2df76fe"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "7477255819ba159326ea54e0bf19367efbcf4c210c30046dea2419816bab5ce1"
+   }
+  },
+  {
+   "index": 17,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:87798",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 87798
+   },
+   "knowledge_object": "atopic dermatitis",
+   "tag": "diagnosis",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed the specific age (5-year-old), a vignette detail not represented by KnowledgeObject/Tag and not necessary to the diagnostic target",
+    "text_distributed": false,
+    "sha256": "fe7e13e95143ee9d226c5f165bb5452708684720f1ecc2d19770997c9f763ec5"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "63755c4e5a527e647026c43d737f3d8dea70f9c80b568555a7253e3c70d441f8"
+   }
+  },
+  {
+   "index": 18,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:150159",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 150159
+   },
+   "knowledge_object": "dumping syndrome",
+   "tag": "clinical presentation",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed 'All ... except' option-dependent negative-exclusion phrasing; changed Tag from 'complications' to 'clinical presentation' since the target asks about characteristic features, not complications",
+    "text_distributed": false,
+    "sha256": "fc3e9889e1c3794a0a806138075424b5827b6f72441018cb17d124b0b87818f1"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "082238d9a8d6aedd8735b39f0d008dc2f0e2fc331be6264d0de2e74c7471beba"
+   }
+  },
+  {
+   "index": 19,
+   "dataset": "MedMCQA",
+   "split": "train",
+   "source_id": "medmcqa:train:102257",
+   "loader": {
+    "hf_dataset": "openlifescienceai/medmcqa",
+    "config": null,
+    "split": "train",
+    "gold": "[opa,opb,opc,opd][cop]",
+    "index": 102257
+   },
+   "knowledge_object": "preterm delivery",
+   "tag": "risk factors",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed 'All ... except' option-dependent negative-exclusion phrasing",
+    "text_distributed": false,
+    "sha256": "ad65899050acd2831abd54afe17286e5d301331b3728f7a175420dcdcf7826e0"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "f0bc73bbe633026592e46c8696f28a34bc9a10d6c921cff1e7853568e6ee2c50"
+   }
+  },
+  {
+   "index": 20,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:anatomy:dev:0",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "anatomy",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 0
+   },
+   "knowledge_object": "hyoid bone",
+   "tag": "embryology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=false - already self-contained open question",
+    "text_distributed": false,
+    "sha256": "b326ed4b333e70da2f9b28263eb3f222ba326e99e7ae59309885fa8c4f0f2b2c"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "a08467664ab7620c8ed558d3ba44f6502cda11e374214800647e00d25a87e74e"
+   }
+  },
+  {
+   "index": 21,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:anatomy:dev:4",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "anatomy",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 4
+   },
+   "knowledge_object": "pituitary gland",
+   "tag": "anatomy",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed 'which of the following' phrasing",
+    "text_distributed": false,
+    "sha256": "ae3af5e4f66b4c0e0baa36e644a79364920305392b18004c5c4b54095c33105b"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "cc99520176faf3984200275a619122e79971fc5c4e026b36d50764662ec32040"
+   }
+  },
+  {
+   "index": 22,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:clinical_knowledge:dev:0",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "clinical_knowledge",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 0
+   },
+   "knowledge_object": "muscle contraction",
+   "tag": "physiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - rephrased fill-in-blank fragment into a full question",
+    "text_distributed": false,
+    "sha256": "a7379f9d655806dc65c1250d54354cf8b1cac125a88f06599fadaf611a71ecf5"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "baf32b1960677e9bb1188656b44b2e0fa517ca04078aace29460a543263494f7"
+   }
+  },
+  {
+   "index": 23,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:clinical_knowledge:dev:4",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "clinical_knowledge",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 4
+   },
+   "knowledge_object": "glycolysis",
+   "tag": "biochemistry",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - rephrased fill-in-blank fragment into a full question",
+    "text_distributed": false,
+    "sha256": "c5804331203931363d9286ab342b39169f70306429941815cffe7cbad173713e"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "1010f08b5f5a8e20b93294510a6480e7f77e768f71c0b395f2bb2cfac3d688b7"
+   }
+  },
+  {
+   "index": 24,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:college_medicine:dev:2",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "college_medicine",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 2
+   },
+   "knowledge_object": "X-linked recessive inheritance",
+   "tag": "genetics",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed vignette framing and 'which of the following' phrasing",
+    "text_distributed": false,
+    "sha256": "ca978c047615d0f1c4e01562f1420b080171e2e53c75a10be6425b35d5cdafe1"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "893a3a95ae3cf8056cf9b46ad9126027b5c3fce268e9ab921106d58b42d97636"
+   }
+  },
+  {
+   "index": 25,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:medical_genetics:dev:4",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "medical_genetics",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 4
+   },
+   "knowledge_object": "meiosis",
+   "tag": "cell division",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - rephrased fill-in-blank fragment into a full question",
+    "text_distributed": false,
+    "sha256": "5b37ae53a7d6c30ea6ab41c37d1f8137244d6a6246443a226d4f5758a9f1ad3e"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "b744c6c597301bbe2ace725296493ebec8ed00ee63f4acd411715b607d942e05"
+   }
+  },
+  {
+   "index": 26,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:nutrition:dev:0",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "nutrition",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 0
+   },
+   "knowledge_object": "risk ratio interpretation",
+   "tag": "epidemiology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - removed option-dependent phrasing; rewrote to ask about the risk ratio's own interpretation (magnitude/direction) rather than statistical significance, since no CI/p-value was given to support a significance judgment",
+    "text_distributed": false,
+    "sha256": "0a39694ca962d66f4f9567b188559862bb4733116f06c896db027c325c9a3e9a"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "51a58e1bcfae0ae626103f61fad87d098a36d7fd666573d6ae2b11810ecad024"
+   }
+  },
+  {
+   "index": 27,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:nutrition:dev:4",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "nutrition",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 4
+   },
+   "knowledge_object": "type 2 diabetes with obesity",
+   "tag": "pharmacology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - kept 'as of 2020' -- on review this is a substantive temporal qualifier on a guideline-dependent fact, not a dataset-formatting artifact, so it was restored rather than dropped",
+    "text_distributed": false,
+    "sha256": "207cb6a01114e96879cb6263a23e00daf9f02370ab1ba241dd3f644d27cddd89"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "2811c32f6dc611bcc5fa5cac5c0a8aeda8d9e5a4afbab41a146d79c6537ffda1"
+   }
+  },
+  {
+   "index": 28,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:professional_medicine:dev:1",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "professional_medicine",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 1
+   },
+   "knowledge_object": "sacral torsion",
+   "tag": "diagnostic exam findings",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - the original rewrite embedded specific exam findings (deep left sacral sulcus, posterior inferior right lateral angle, spring test) needed to distinguish torsion subtypes, none of which are represented by KnowledgeObject/Tag; simplified to ask generically about diagnostic findings for the KnowledgeObject under the Tag instead",
+    "text_distributed": false,
+    "sha256": "3549b9429e2015914ce6de58e806465fe5364ba768cf739f2af2913934e79d7e"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "506365dbb465eb03ba7cbee83ba4e5d301cfc476baf850adf46e4408976c995c"
+   }
+  },
+  {
+   "index": 29,
+   "dataset": "MMLU-Med",
+   "split": "dev_used_as_train_equivalent",
+   "source_id": "mmlu:virology:dev:1",
+   "loader": {
+    "hf_dataset": "cais/mmlu",
+    "config": "virology",
+    "split": "dev",
+    "gold": "choices[answer] (answer is an index)",
+    "index": 1
+   },
+   "knowledge_object": "paramyxoviruses",
+   "tag": "morphology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - replaced the awkwardly-phrased virology:dev:0 parvovirus row with this virology:dev:1 example (removing 'which of the following' phrasing) rather than inventing a new semantic target for the original row",
+    "text_distributed": false,
+    "sha256": "20e7a7ba6d7816def1a0623dabd11eecadd6a3775de3bff7f2e890cd316d286a"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "ab6d77ec33aef78e9e5c37fbaca6a894a6f9be44ca0ee04ac082910678cf8b30"
+   }
+  },
+  {
+   "index": 30,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:915",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 915
+   },
+   "knowledge_object": "cytomegalovirus infection",
+   "tag": "risk factors",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted yes/no research-title framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "73777efbf3ef941a9566012a4a90c1551980a871eb68dfe41779f445e21c71ce"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "be3e48cd3433b1fe39d1a60e40a182b0398041eb7dfdcf238f00cc788695208a"
+   }
+  },
+  {
+   "index": 31,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:183",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 183
+   },
+   "knowledge_object": "insulin resistance",
+   "tag": "pathogenesis",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted yes/no research-title framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "0a25365dcb9d644e1cc4b05ea7873cdd82484ac4ac680f8d9bc9ec6b8905ce2c"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "bf9e9fc5affc6ed0d3c4fe6753e076d2c7f5f2cfb7a69425056c0cd1390cadd6"
+   }
+  },
+  {
+   "index": 32,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:806",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 806
+   },
+   "knowledge_object": "ACL reconstruction failure",
+   "tag": "risk factors",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted yes/no research-title framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "ce780b31bfb7eb6e6c0104d636fce3399a03377233666e410ab65be73254d3e6"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "cbb612ceb6ab42ed910c3f6aa1a3fd36bf326bcdec30264efd8dd7c40221e0d2"
+   }
+  },
+  {
+   "index": 33,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:513",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 513
+   },
+   "knowledge_object": "ARDS after trauma",
+   "tag": "pathogenesis",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted title-fragment research-question framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "6866e11a4713cb641283241d25ab4bf65e770b66a107d19f173c6d8cb03a28fc"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "187cc25a8c7863ca4c56c8b5a9c45ac692fc97870151c9fa09137093ac5a5325"
+   }
+  },
+  {
+   "index": 34,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:689",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 689
+   },
+   "knowledge_object": "TNF inhibitor therapy",
+   "tag": "complications",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted title-fragment research-question framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "e23326570ade7eafa685a9e5720ca54c2e8d7fb6e79780a037e44e2d675655cb"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "73c48af6a374f8fce7d43bfb23512ae9df70565bfe13dcac3b8e318304572741"
+   }
+  },
+  {
+   "index": 35,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:983",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 983
+   },
+   "knowledge_object": "breastfeeding",
+   "tag": "risk factors",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted yes/no research-title framing into an open knowledge request",
+    "text_distributed": false,
+    "sha256": "bd39fcafdbc97970160e5d648e48ce3de8c9044de4a93fd6b5a9e305a0baada9"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "4a509486bdf13f58d4acf318115df20de8d5d19539bc038789ae9e595f27cd12"
+   }
+  },
+  {
+   "index": 36,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:917",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 917
+   },
+   "knowledge_object": "Hodgkin lymphoma radiotherapy",
+   "tag": "complications",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted remaining yes/no framing into an open 'how does X affect Y' knowledge request, consistent with the other PubMedQA rows, to avoid teaching a yes/no stylistic bias",
+    "text_distributed": false,
+    "sha256": "ec024d79255ce88c71b1264a26c459ff5363b624df2cf7e1ae6985bfcf6c7115"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "228a02a8c14cf3f3d1952c436a479166a48f2750aab5016ca8e2fbd45247bcfc"
+   }
+  },
+  {
+   "index": 37,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:381",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 381
+   },
+   "knowledge_object": "type 2 diabetes management",
+   "tag": "pharmacology",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted title-fragment research-question framing, then further converted remaining yes/no phrasing into an open 'what is the recommended approach' request, consistent with the other PubMedQA rows",
+    "text_distributed": false,
+    "sha256": "2b65fe0c0be49ba6e70772c6e78ff82aa8cb841caa04c9648ed20e042681bfa6"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "11fffadc50a2339ac710d459413bd899564a74a9a6205ef21422271a3cf6f4c5"
+   }
+  },
+  {
+   "index": 38,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:642",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 642
+   },
+   "knowledge_object": "percutaneous coronary intervention",
+   "tag": "treatment",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted remaining yes/no framing into an open 'what is the effect of X on Y' knowledge request, consistent with the other PubMedQA rows",
+    "text_distributed": false,
+    "sha256": "faecbf505f4dfa8437d1c85862aca7b8b40202801c1d319942848a2ae8a57e3d"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "b798624eed2ad4c4925e137bb59ae34f5067f79b7057b115d953eeb6a67ccd15"
+   }
+  },
+  {
+   "index": 39,
+   "dataset": "PubMedQA",
+   "split": "train",
+   "source_id": "pubmedqa:pqa_labeled:train:688",
+   "loader": {
+    "hf_dataset": "qiaojin/PubMedQA",
+    "config": "pqa_labeled",
+    "split": "train",
+    "gold": "final_decision (yes/no/maybe)",
+    "index": 688
+   },
+   "knowledge_object": "retinopathy of prematurity",
+   "tag": "risk factors",
+   "question": {
+    "origin": "hand-written from the source item (no model or API call); rewritten=true - converted remaining yes/no framing into an open 'what is the relationship' knowledge request, consistent with the other PubMedQA rows",
+    "text_distributed": false,
+    "sha256": "33e781dc8b6e72d7e42a85e45ca693042bf87799ef00cc9fc6de47f856b9603c"
+   },
+   "teacher_output": {
+    "origin": "Teacher answer + explanation of an earlier lineage; the answers are identical to the responses recorded in the receipts of a gpt-4.1-2025-04-14 (temperature 0) acquisition dated 2026-09-15; how the rows were first produced, and the generation prompt, are not recorded in this repository",
+    "text_distributed": false,
+    "sha256": "cf69b3c0e9cf602e3679469a19f73e1afff0b03ebb864cb66a5ac6079af98c3c"
+   }
+  }
+ ]
+}

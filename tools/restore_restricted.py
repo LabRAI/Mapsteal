@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Restore restricted inputs (files not redistributed in the public repository) from a bundle provided by the authors, verifying every file against the sha256 recorded in manifests/restricted_inputs.json.
+"""Restore restricted inputs (files not redistributed in the public repository) from a local bundle directory holding the original files, verifying every file against the sha256 recorded in manifests/restricted_inputs.json.
 usage: restore_restricted.py BUNDLE_DIR [--categories R1_benchmark_labels,R2_teacher_outputs,...] [--dry-run]
 BUNDLE_DIR must contain the files at their repository-relative paths (e.g. BUNDLE_DIR/data/gold/medqa.json). Nothing is overwritten unless the sha256 matches the manifest; mismatching files are reported and skipped."""
 import argparse, hashlib, json, shutil, sys

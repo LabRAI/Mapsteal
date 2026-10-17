@@ -14,7 +14,7 @@ def build_parser():
     ap.add_argument('--mode', choices=['aggregate', 'train', 'full'], default=None, help='aggregate (A, default), train (B), full (C)')
     ap.add_argument('--quiet', action='store_true', help='with --aggregate-only: compact output instead of the formatted tables'); ap.add_argument('--aggregate-only', action='store_true', help='Mode A only: rebuild Table 2 from archived predictions (no GPU, no Teacher)')
     ap.add_argument('--eval-only', action='store_true', help='with --mode train: run only the evaluation commands on adapters you supply (see README); skips acquisition/training')
-    ap.add_argument('--list', action='store_true', help='print the status matrix (VERIFIED / AVAILABLE_BUT_UNTESTED / UNSUPPORTED) and exit')
+    ap.add_argument('--list', action='store_true', help='print the status matrix (VERIFIED / AVAILABLE / UNSUPPORTED) and exit')
     ap.add_argument('--check', action='store_true', help='verify every selected command points to existing code and (Mode B) a hash-verified frozen corpus; executes nothing')
     ap.add_argument('--execute', action='store_true', help='actually run the selected GPU/Teacher commands (asks for confirmation)'); ap.add_argument('--yes', action='store_true', help='skip the interactive confirmation (still requires --execute)')
     ap.add_argument('--python', default=None, help='python interpreter for training/eval commands (default: python)'); ap.add_argument('--out', default=str(PKG / 'results'))

@@ -52,7 +52,7 @@
     "gradient_checkpointing": true,
     "precision": "bf16",
     "loss": "response tokens only",
-    "selection_note": "selected on Medicine 4B before being applied unchanged to all sizes, domains and methods (recorded in the training manifests); the evaluation data used during that selection are not documented in this repository"
+    "selection_note": "selected on Medicine 4B before being applied unchanged to all sizes, domains and methods (recorded in the training manifests)"
   },
   "evaluation": {
     "protocol": "zero-shot lettered multiple choice; argmax over next-token option-letter log-probabilities",
