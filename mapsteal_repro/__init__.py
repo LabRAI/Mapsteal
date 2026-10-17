@@ -1,1 +1,1 @@
-"""MapSteal Table 1 reproduction package (stdlib-only aggregation layer)."""
+"""MapSteal Table 2 reproduction package (stdlib-only aggregation layer)."""

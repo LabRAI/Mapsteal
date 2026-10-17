@@ -70,7 +70,7 @@ Each event produces 8 rows (4 hard + 4 easy); after the new rows are identified 
 
 ## Pristine
 
-The unadapted Student, evaluated with the shared evaluator (`python -m baselines pristine evaluate`, equivalent to `python -m mapsteal evaluate --checkpoint none`). The archived Pristine predictions of Table 1 were produced by the original evaluation scripts of several earlier runs; the shared evaluator reproduced all 600 archived predictions in a 4B spot check (100 items per benchmark, `validation/baseline_gpu_check/`).
+The unadapted Student, evaluated with the shared evaluator (`python -m baselines pristine evaluate`, equivalent to `python -m mapsteal evaluate --checkpoint none`). The archived Pristine predictions of Table 2 were produced by the original evaluation scripts of several earlier runs; the shared evaluator reproduced all 600 archived predictions in a 4B spot check (100 items per benchmark, `validation/baseline_gpu_check/`).
 
 ## Budgets, API cost and variance across methods
 
@@ -86,6 +86,6 @@ All methods are allotted about **500 Teacher QA records** per trajectory, but th
 
 MapSteal's per-QA token usage is higher because each request carries the state, contract and direction registry. A comparison by API cost or by training compute is therefore not implied by the common 500-record budget.
 
-**Variance.** The standard deviations in Table 1 are not estimated the same way: for MapSteal they reflect training-seed variation on a fixed corpus; for QEDKS-Adapted and EvoKD-Adapted they include acquisition variation (different Teacher/Student trajectories). The MapSteal SDs are therefore not comparable with the baseline SDs, and acquisition variance of MapSteal is not estimated.
+**Variance.** The standard deviations in Table 2 are not estimated the same way: for MapSteal they reflect training-seed variation on a fixed corpus; for QEDKS-Adapted and EvoKD-Adapted they include acquisition variation (different Teacher/Student trajectories). The MapSteal SDs are therefore not comparable with the baseline SDs, and acquisition variance of MapSteal is not estimated.
 
 **Provenance of starting data.** The Medicine corpus begins with the 40 cold-start QA rows ("Seed40"), recorded in the corpus manifest as Teacher-answered rows of an earlier lineage outside the trajectory; the repository does not record which Teacher model produced them. Their questions are not distributed. The EvoKD-Adapted initial state is 4 rows per domain; the Medicine rows record their source dataset (MedQA, MedMCQA, MMLU-Med, PubMedQA) and the Cybersecurity rows record a cybersecurity topic area; the data splits they come from are not recorded in this repository.

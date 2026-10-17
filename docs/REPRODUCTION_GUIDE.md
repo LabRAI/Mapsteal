@@ -4,7 +4,7 @@ Method descriptions and baseline details: [METHODS.md](METHODS.md). Final settin
 
 ## 1. Data
 
-### Benchmarks (needed for evaluation and Table 1)
+### Benchmarks (needed for evaluation and Table 2)
 `tools/prepare_benchmarks.py` downloads each benchmark from its own release, rebuilds the six frozen panels and checks every panel against its recorded sha256 (`manifests/panel_hashes.json`); `manifests/benchmark_sources.json` pins the exact release, file hash and the license shown on the source page when checked. Read each benchmark's terms yourself.
 
 | benchmark | release used | source |
@@ -31,22 +31,22 @@ The GPT-4.1 training corpora, acquisition transcripts, the 40 Medicine cold-star
 - **Fresh runs do not need them** except the starting rows: MapSteal Medicine builds its corpus from the acquisition rows only unless you pass `--seed-corpus FILE` (JSONL with `instruction`/`output`/`input`); the formal corpora contained 40 extra cold-start rows. EvoKD-Adapted needs 4 initial rows per domain: pass `--d0 FILE` (JSONL with keys `dataset`, `knowledge_object`, `question`, `reference_answer`, `source_id`).
 - **Retraining on the archived corpora** (level B) and the tests that replay archived Teacher responses need the files themselves (available from the authors; `python tools/restore_restricted.py BUNDLE_DIR` restores them with sha256 checks).
 
-## 2. Reproduce Table 1
+## 2. Reproduce Table 2
 ```bash
 python tools/prepare_benchmarks.py download external && python tools/prepare_benchmarks.py panels --source external --output panels && python tools/prepare_benchmarks.py gold --panels panels
-bash run.sh --aggregate-only                      # reads manifests/table1_manifest.json, data/predictions/ (180 files), data/gold/; writes results/table1.tex, table1_summary.csv, table1_per_run.csv
+bash run.sh --aggregate-only                      # reads manifests/table2_manifest.json, data/predictions/ (180 files), data/gold/; writes results/table2.tex, table2_summary.csv, table2_per_run.csv
 python3 validation/validate.py                    # independent recomputation of the 240 run-level accuracies, structure checks, tamper test
 ```
-`data/predictions/<method>/<size>/<domain>/<seed>/<benchmark>.jsonl` holds one `{"item_id", "pred"}` row per item in the original order (the archived files also stored labels and scores; those fields were dropped and the original sha256 is kept in the manifest). Accuracy = correct / scored items, mean ± sample SD (ddof 1) over seeds 42/43/44; Pristine is a single model. Executed with the workflow above: 180/180 prediction files verified, 72/72 cells and 24/24 macro summaries complete, outputs byte-identical to the archived Table 1 files. This recomputes the table from the recorded predictions; it does not retrain anything.
+`data/predictions/<method>/<size>/<domain>/<seed>/<benchmark>.jsonl` holds one `{"item_id", "pred"}` row per item in the original order (the archived files also stored labels and scores; those fields were dropped and the original sha256 is kept in the manifest). Accuracy = correct / scored items, mean ± sample SD (ddof 1) over seeds 42/43/44; Pristine is a single model. Executed with the workflow above: 180/180 prediction files verified, 72/72 cells and 24/24 macro summaries complete, outputs byte-identical to the archived Table 2 files. This recomputes the table from the recorded predictions; it does not retrain anything.
 
 ## 3. Experiments
 | id | experiment | paper artifact | how |
 |---|---|---|---|
-| E1 | Table 1 from archived predictions | Table 1 | §2 |
-| E2 | Pristine, 3 sizes × 2 domains | Table 1 | `baselines pristine evaluate` |
-| E3 | MapSteal: acquisition (budget 500) per domain, training seeds 42/43/44 × 3 sizes × 2 domains | Table 1 | §4 |
-| E4 | QEDKS-Adapted: 18 acquisitions + 18 trainings | Table 1 | §5 |
-| E5 | EvoKD-Adapted: 18 online runs | Table 1 | §6 |
+| E1 | Table 2 from archived predictions | Table 2 | §2 |
+| E2 | Pristine, 3 sizes × 2 domains | Table 2 | `baselines pristine evaluate` |
+| E3 | MapSteal: acquisition (budget 500) per domain, training seeds 42/43/44 × 3 sizes × 2 domains | Table 2 | §4 |
+| E4 | QEDKS-Adapted: 18 acquisitions + 18 trainings | Table 2 | §5 |
+| E5 | EvoKD-Adapted: 18 online runs | Table 2 | §6 |
 The paper source is not part of this repository, so other tables and figures cannot be mapped and no plotting script is included.
 
 ## 4. MapSteal
@@ -86,7 +86,7 @@ Students: `Qwen/Qwen3.5-4B` from the Hugging Face cache; 2B/9B at `$MAPSTEAL_MOD
 
 | workflow | status |
 |---|---|
-| benchmark preparation → Table 1 (§1–2) | executed end to end |
+| benchmark preparation → Table 2 (§1–2) | executed end to end |
 | `mapsteal acquire/corpus/train/evaluate` | each stage executed at small scale (Medicine B=40, Cybersecurity B=5, 2B Student, $0.46); replay of archived Teacher responses and corpus reconstruction verified; full-scale run not repeated |
 | `baselines pristine evaluate` | executed on GPU for 4B (100 items per benchmark; 600/600 predictions identical to the archived ones) |
 | QEDKS-Adapted acquire/train, EvoKD-Adapted `--execute` | argument parsing and CPU checks only; GPU/Teacher paths not run since the code was moved into this repository |

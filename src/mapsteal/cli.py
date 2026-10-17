@@ -10,7 +10,7 @@ EPILOG = """Examples (Medicine):
   python -m mapsteal acquire  --domain medicine --budget 10 --output runs/smoke --execute      # real GPT-4.1 Teacher calls (needs OPENAI_API_KEY); without --execute only a plan and a cost estimate is printed
   python -m mapsteal train    --corpus runs/smoke/corpus.jsonl --student 2B --output runs/smoke/student          # fresh LoRA, selected training configuration (GPU)
   python -m mapsteal evaluate --checkpoint runs/smoke/student/adapter --student 2B --panels /path/to/panels --output runs/smoke/evaluation [--limit 100]
-Formal results: `bash run.sh --aggregate-only` rebuilds Table 1 from the archived predictions (no GPU, no Teacher). See README.md and docs/REPRODUCTION_GUIDE.md."""
+Formal results: `bash run.sh --aggregate-only` rebuilds Table 2 from the archived predictions (no GPU, no Teacher). See README.md and docs/REPRODUCTION_GUIDE.md."""
 
 def _refuse_formal(path):
     p = Path(path).resolve(); root = Path(__file__).resolve().parents[2]
@@ -115,7 +115,7 @@ def build_parser():
     c.add_argument('--seed-corpus', default='none', help="'medicine' (packaged cold-start rows, not distributed), 'none', or a JSONL file of cold-start rows to prepend"); c.add_argument('--validate', action='store_true', help='also write the machine-readable corpus validation report')
     t = sp.add_parser('train', help='fresh LoRA adaptation of a pristine Student with the selected training configuration (GPU)'); t.add_argument('--corpus', required=True); t.add_argument('--student', required=True, help='2B | 4B | 9B | Qwen/Qwen3.5-<size>')
     t.add_argument('--output', required=True); t.add_argument('--seed', type=int, default=42); t.add_argument('--device', default='cuda:0')
-    e = sp.add_parser('evaluate', help='frozen evaluation of a checkpoint on the Table 1 benchmarks of a domain (GPU)'); e.add_argument('--domain', choices=['medicine', 'cybersecurity'], default='medicine'); e.add_argument('--checkpoint', required=True, help="adapter directory or 'none' (pristine)"); e.add_argument('--student', required=True)
+    e = sp.add_parser('evaluate', help='frozen evaluation of a checkpoint on the Table 2 benchmarks of a domain (GPU)'); e.add_argument('--domain', choices=['medicine', 'cybersecurity'], default='medicine'); e.add_argument('--checkpoint', required=True, help="adapter directory or 'none' (pristine)"); e.add_argument('--student', required=True)
     e.add_argument('--panels', required=True, help='directory with the frozen panel files (built by tools/prepare_benchmarks.py)'); e.add_argument('--output', required=True); e.add_argument('--benchmarks', help='comma-separated subset (default: all three of the domain)')
     e.add_argument('--limit', type=int, help='evaluate only the first N items of each benchmark (labelled subset; smoke tests)'); e.add_argument('--device', default='cuda:0')
     return ap

@@ -1,12 +1,12 @@
 # MapSteal
 
-MapSteal acquires domain knowledge from a Teacher LLM without looking at the Student: it expands a small set of root questions into a tree of knowledge states (one Teacher request per QA record, fixed admission rules), trains a pristine Qwen3.5 Student on the resulting corpus with a fresh LoRA, and evaluates it zero-shot on multiple-choice benchmarks (Medicine: MedMCQA, MedQA, MedXpertQA-Text; Cybersecurity: CyberMetric, SecEval, CTI-Bench). This repository contains the implementation, the baselines of the paper's Table 1 (QEDKS-Adapted, EvoKD-Adapted, Pristine), the archived Student predictions, and the scripts to recompute Table 1. Method details: [docs/METHODS.md](docs/METHODS.md); full commands and settings: [docs/REPRODUCTION_GUIDE.md](docs/REPRODUCTION_GUIDE.md).
+MapSteal acquires domain knowledge from a Teacher LLM without looking at the Student: it expands a small set of root questions into a tree of knowledge states (one Teacher request per QA record, fixed admission rules), trains a pristine Qwen3.5 Student on the resulting corpus with a fresh LoRA, and evaluates it zero-shot on multiple-choice benchmarks (Medicine: MedMCQA, MedQA, MedXpertQA-Text; Cybersecurity: CyberMetric, SecEval, CTI-Bench). This repository contains the implementation, the baselines of the paper's Table 2 (QEDKS-Adapted, EvoKD-Adapted, Pristine), the archived Student predictions, and the scripts to recompute Table 2. Method details: [docs/METHODS.md](docs/METHODS.md); full commands and settings: [docs/REPRODUCTION_GUIDE.md](docs/REPRODUCTION_GUIDE.md).
 
 ## Installation
 Python ≥ 3.9.
 ```bash
 git clone git@github.com:LabRAI/Mapsteal.git && cd Mapsteal
-pip install -e .                    # Table 1 recomputation needs only the standard library
+pip install -e .                    # Table 2 recomputation needs only the standard library
 pip install -e ".[acquire,gpu]"     # Teacher acquisition (openai) and GPU training/evaluation
 pip install -e ".[qedks]"           # + QEDKS-Adapted dependencies      (".[evokd]" for EvoKD-Adapted)
 export OPENAI_API_KEY=...           # for Teacher calls; or pass --env-file PATH
@@ -18,16 +18,59 @@ The benchmarks are downloaded from their own releases and converted to the froze
 ```bash
 python tools/prepare_benchmarks.py download external                           # MedQA, MedMCQA, MedXpertQA, CyberMetric, SecEval, CTI-Bench (pinned releases, ~140 MB)
 python tools/prepare_benchmarks.py panels --source external --output panels    # evaluation panels  (needs pandas, pyarrow; transformers + Qwen3.5-4B tokenizer in the HF cache)
-python tools/prepare_benchmarks.py gold --panels panels                        # gold labels -> data/gold/ (used by Table 1)
+python tools/prepare_benchmarks.py gold --panels panels                        # gold labels -> data/gold/ (used by Table 2)
 ```
 Check each benchmark's terms before use (`manifests/benchmark_sources.json` lists release and listed license). Sources, pinned versions and scoring conventions: [guide §1](docs/REPRODUCTION_GUIDE.md#1-data).
 
-## Reproducing Table 1
+## Reproducing Table 2
 ```bash
-bash run.sh --aggregate-only        # 180 prediction files in data/predictions/ + data/gold/ -> results/table1.tex, table1_summary.csv, table1_per_run.csv
+bash run.sh --aggregate-only        # 180 prediction files in data/predictions/ + data/gold/ -> results/table2.tex, table2_summary.csv, table2_per_run.csv
 python3 validation/validate.py      # independent recomputation of all 240 run-level accuracies
 ```
-Table 1 = mean ± sample SD (seeds 42/43/44; Pristine one model) of 72 cells: 4 methods × 3 Students (2B/4B/9B) × 6 benchmarks. The output matches the archived Table 1 files exactly (180/180 files, 72/72 cells, 24/24 macro summaries). This recomputes the table from the recorded predictions; retraining the Students is described below.
+Table 2 = mean ± sample SD (seeds 42/43/44; Pristine one model) of 72 cells: 4 methods × 3 Students (2B/4B/9B) × 6 benchmarks. This recomputes the table from the recorded predictions (CPU only, no Teacher, no training); retraining the Students is described below.
+
+**Output of `bash run.sh --aggregate-only`** (CPU, a few seconds; beginning and end of the terminal output; the full tables are in `results/`):
+```text
+MEDICINE  (accuracy %)
+
+ Student      Method                  MedMCQA           MedQA        MedXpert
+ ────────────────────────────────────────────────────────────────────────────
+ Qwen3.5-2B   Pristine                  45.80           36.06           10.78
+              MapSteal (Ours)   47.87 ± 1.03*   45.59 ± 0.16*    14.65 ± 0.19
+              QEDKS-Adapted      43.27 ± 0.12    44.59 ± 0.81   14.88 ± 0.83*
+              EvoKD-Adapted      40.53 ± 8.09    41.19 ± 8.47    12.39 ± 1.57
+
+  ...
+╭─ Verification Summary ───────────────────────────────────────────────────────────────────────╮
+│ Prediction files              180/180 VERIFIED                                               │
+│ Table 2 benchmark cells       72/72 COMPLETE                                                 │
+│ Domain macro summaries        24/24 COMPLETE                                                 │
+│ Aggregation integrity checks  PASS                                                           │
+│ Last full validation          ALL CHECKS PASS  (report written 2026-10-16 20:26)             │
+│ Output files                  results/  (table2.tex, table2_summary.csv, table2_per_run.csv) │
+│                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+`python3 validation/validate.py` ends with `Overall: ALL CHECKS PASS`.
+
+**Table 2** (accuracy %, generated into `results/table2.tex`; mean ± sample SD over seeds 42/43/44, Pristine is one model; CyberMetric excludes `cybermetric:1729`, so n = 2,499):
+
+| Student | Method | MedMCQA | MedQA | MedXpertQA-Text | CyberMetric | SecEval | CTI-Bench |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 2B | Pristine | 45.80 | 36.06 | 10.78 | 79.47 | 71.93 | 60.64 |
+| 2B | **MapSteal (Ours)** | 47.87 ± 1.03 | 45.59 ± 0.16 | 14.65 ± 0.19 | 79.70 ± 0.14 | 78.68 ± 0.56 | 62.41 ± 1.07 |
+| 2B | QEDKS-Adapted | 43.27 ± 0.12 | 44.59 ± 0.81 | 14.88 ± 0.83 | 79.49 ± 0.23 | 77.73 ± 1.46 | 65.48 ± 0.16 |
+| 2B | EvoKD-Adapted | 40.53 ± 8.09 | 41.19 ± 8.47 | 12.39 ± 1.57 | 71.00 ± 6.19 | 69.49 ± 6.25 | 52.73 ± 9.42 |
+| 4B | Pristine | 56.60 | 62.14 | 16.73 | 83.63 | 80.60 | 65.71 |
+| 4B | **MapSteal (Ours)** | 62.27 ± 0.42 | 66.69 ± 0.44 | 17.63 ± 0.46 | 84.61 ± 0.16 | 83.19 ± 0.33 | 66.59 ± 0.71 |
+| 4B | QEDKS-Adapted | 61.00 ± 0.53 | 65.54 ± 0.20 | 16.94 ± 0.45 | 84.21 ± 0.24 | 81.46 ± 0.96 | 67.30 ± 0.54 |
+| 4B | EvoKD-Adapted | 58.47 ± 1.10 | 63.45 ± 0.66 | 16.22 ± 0.70 | 82.97 ± 0.13 | 80.28 ± 0.75 | 63.79 ± 0.93 |
+| 9B | Pristine | 62.60 | 67.40 | 19.55 | 83.75 | 83.04 | 64.99 |
+| 9B | **MapSteal (Ours)** | 65.60 ± 0.20 | 71.14 ± 0.43 | 20.18 ± 0.08 | 86.66 ± 0.12 | 85.32 ± 0.43 | 69.04 ± 0.77 |
+| 9B | QEDKS-Adapted | 65.13 ± 0.90 | 71.20 ± 0.71 | 19.88 ± 0.50 | 86.75 ± 0.14 | 84.18 ± 0.40 | 70.52 ± 0.19 |
+| 9B | EvoKD-Adapted | 59.00 ± 5.72 | 67.69 ± 5.64 | 19.85 ± 0.42 | 84.10 ± 1.00 | 81.00 ± 2.22 | 66.95 ± 1.73 |
+
+MapSteal uses one acquisition trajectory per setting with three training seeds; QEDKS-Adapted and EvoKD-Adapted use three independent acquisition/training trajectories, so their standard deviations are not estimated the same way ([METHODS.md](docs/METHODS.md)).
 
 ## Running MapSteal
 ```bash
@@ -62,7 +105,7 @@ python -m baselines pristine evaluate --domain medicine --student 4B --panels pa
 Status: run on GPU for 4B (100 items per benchmark), identical to the archived predictions.
 
 ## Repository layout
-`src/mapsteal/` (method), `src/baselines/` (QEDKS-Adapted, EvoKD-Adapted, Pristine), `configs/formal_settings.json` (final hyper-parameters, seeds, budgets), `data/predictions/` (archived Student predictions: sample id + predicted option), `manifests/` (Table 1 manifest, panel hashes, benchmark releases), `provenance/` (archived training and acquisition run records), `results/` (Table 1 files), `tools/`, `tests/`, `validation/`, `docs/`.
+`src/mapsteal/` (method), `src/baselines/` (QEDKS-Adapted, EvoKD-Adapted, Pristine), `configs/formal_settings.json` (final hyper-parameters, seeds, budgets), `data/predictions/` (archived Student predictions: sample id + predicted option), `manifests/` (Table 2 manifest, panel hashes, benchmark releases), `provenance/` (archived training and acquisition run records), `results/` (Table 2 files), `tools/`, `tests/`, `validation/`, `docs/`.
 
 Tests: `bash tests/run_cpu_tests.sh` and `python3 validation/validate_impl.py` (CPU; checks that need undistributed Teacher data print SKIPPED).
 

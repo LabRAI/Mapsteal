@@ -1,7 +1,7 @@
-"""Frozen Medicine evaluation of Table 1: MedMCQA (500-item rendered panel), MedQA (1,273-item USMLE test, A-E), MedXpertQA-Text (2,450 items, A-J).
+"""Frozen Medicine evaluation of Table 2: MedMCQA (500-item rendered panel), MedQA (1,273-item USMLE test, A-E), MedXpertQA-Text (2,450 items, A-J).
 Next-token option-letter argmax (TransformersScorer, batch size 1, bf16, no chain of thought); accuracy = correct / n. Prompts are those of the formal evaluators:
 MedMCQA rows carry their rendered prompt (s2_eval_rendered_rows_v1.jsonl); MedQA and MedXpertQA prompts are the frozen lettered multiple-choice prompts of the formal evaluation.
-No benchmark-specific exclusions apply to the Medicine benchmarks of Table 1. The panels are NOT shipped: supply them in one directory under their original file names (sha256-checked)."""
+No benchmark-specific exclusions apply to the Medicine benchmarks of Table 2. The panels are NOT shipped: supply them in one directory under their original file names (sha256-checked)."""
 from __future__ import annotations
 import hashlib, json, time
 from pathlib import Path
@@ -58,6 +58,6 @@ def evaluate(checkpoint, student, panels_dir, output, benchmarks=('medmcqa', 'me
             preds.append({'item_id': item_id, 'gold': gold, 'prediction': pred, 'correct': pred == gold, 'lp': {k: round(float(v), 4) for k, v in lp.items()}})
         (out / f'{b}.jsonl').write_text(''.join(json.dumps(p, sort_keys=True) + '\n' for p in preds)); nc = sum(p['correct'] for p in preds)
         summary['benchmarks'][b] = {'n': len(preds), 'n_correct': nc, 'accuracy_pct': 100 * nc / len(preds), 'panel_sha256': PANELS[b][1], 'panel_n': PANELS[b][2],
-                                    'coverage': 'full frozen panel' if full else f'SUBSET: first {limit} items (smoke test, not comparable to Table 1)'}
+                                    'coverage': 'full frozen panel' if full else f'SUBSET: first {limit} items (smoke test, not comparable to Table 2)'}
         print(b, summary['benchmarks'][b], flush=True)
     summary['seconds'] = round(time.time() - t0, 1); summary['torch'] = torch.__version__; (out / 'evaluation.json').write_text(json.dumps(summary, indent=1)); return summary

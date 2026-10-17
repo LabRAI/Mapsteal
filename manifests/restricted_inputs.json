@@ -5632,7 +5632,7 @@
    "sha256": "d21356f78cb82cd45311db6b2d61ea25721d17f4fb94b1a43aa98ce27df48639",
    "bytes": 167982,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {
@@ -5641,7 +5641,7 @@
    "sha256": "22a203c5102fa3b29522d5d4cada004ef9e123192ddab5c6d358b34d448a097a",
    "bytes": 180098,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {
@@ -5650,7 +5650,7 @@
    "sha256": "ab78da49b0a65633c003a33899f8bcb50e71202887f8d3bd0e05dd74f317695f",
    "bytes": 37338,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {
@@ -5659,7 +5659,7 @@
    "sha256": "017ffe37e555eee9d3bb206fc4241bd4b9857e5e9a62e5eac6505d64470835a5",
    "bytes": 81922,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {
@@ -5668,7 +5668,7 @@
    "sha256": "ab3ceaf561a4e0a746eb543d65ea2754b9c89e3e7e82db99104533d1b20abfc3",
    "bytes": 254006,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {
@@ -5677,7 +5677,7 @@
    "sha256": "0dfaf7c63d334b8d8380a1f0bca76aaae57d550e05e7cd5ea850d090564bf15e",
    "bytes": 152395,
    "reason": "gold labels of third-party benchmarks; not redistributed here",
-   "required_for": "Table 1 aggregation (Mode A), validation/validate.py, evaluation comparisons",
+   "required_for": "Table 2 aggregation (Mode A), validation/validate.py, evaluation comparisons",
    "how_to_obtain": "build from the benchmarks' own releases: tools/prepare_benchmarks.py (see README)"
   },
   {

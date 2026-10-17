@@ -1,5 +1,5 @@
 {
-  "description": "Final settings of the experiments reported in Table 1. tests/test_formal_settings.py checks these values against the archived run records (provenance/) and the code constants.",
+  "description": "Final settings of the experiments reported in Table 2. tests/test_formal_settings.py checks these values against the archived run records (provenance/) and the code constants.",
   "students": {
     "2B": {
       "id": "Qwen/Qwen3.5-2B",

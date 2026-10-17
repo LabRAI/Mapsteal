@@ -1,4 +1,4 @@
-"""Selected Training Configuration (the Student-adaptation recipe of Table 1): fresh LoRA, lr 3e-4, 2 epochs, rank 16 / alpha 32 / dropout 0.05, MLP-only targets (gate/up/down),
+"""Selected Training Configuration (the Student-adaptation recipe of Table 2): fresh LoRA, lr 3e-4, 2 epochs, rank 16 / alpha 32 / dropout 0.05, MLP-only targets (gate/up/down),
 linear schedule, warmup 0, effective batch 8 (1 x 8 accumulation), max sequence length 1024, gradient checkpointing, bf16, response-only loss. Seeds: 42/43/44."""
 from dataclasses import dataclass
 

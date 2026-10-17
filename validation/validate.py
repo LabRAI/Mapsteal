@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CPU-only validation of Mode A for the official four-method Table 1. Writes validation/VALIDATION_REPORT.md.
+"""CPU-only validation of Mode A for the official four-method Table 2. Writes validation/VALIDATION_REPORT.md.
 Expectations are derived from the manifest and the archived data, not hard-coded counts. Reference:
   validation/reference/independent_reference_four_methods.csv      run-level accuracies recomputed by a separate stdlib implementation (not by this package's aggregator)
 Rounded paper values are never used as ground truth."""
@@ -18,8 +18,8 @@ ents = man['entries']
 chk('manifest methods == official methods (no other baseline present)', sorted({e['method'] for e in ents}) == sorted(OFFICIAL_METHODS), str(sorted({e['method'] for e in ents})))
 nb = sum(len(v) for v in OFFICIAL_BENCH.values()); exp_cells = len(OFFICIAL_SIZES) * len(OFFICIAL_METHODS) * nb
 bench_cells = [s for s in summ if s['benchmark'] not in MAC.values()]; macro_cells = [s for s in summ if s['benchmark'] in MAC.values()]
-chk(f'Table 1 benchmark cells = students x methods x benchmarks = {len(OFFICIAL_SIZES)}x{len(OFFICIAL_METHODS)}x{nb}', len(bench_cells) == exp_cells, f'{len(bench_cells)} cells found, {exp_cells} expected')
-chk('every official Table 1 cell is COMPLETE', all(s['completeness'] == 'COMPLETE' for s in bench_cells + macro_cells), f'{sum(s["completeness"]=="COMPLETE" for s in bench_cells)}/{len(bench_cells)} benchmark cells; {sum(s["completeness"]=="COMPLETE" for s in macro_cells)}/{len(macro_cells)} per-domain macro summaries')
+chk(f'Table 2 benchmark cells = students x methods x benchmarks = {len(OFFICIAL_SIZES)}x{len(OFFICIAL_METHODS)}x{nb}', len(bench_cells) == exp_cells, f'{len(bench_cells)} cells found, {exp_cells} expected')
+chk('every official Table 2 cell is COMPLETE', all(s['completeness'] == 'COMPLETE' for s in bench_cells + macro_cells), f'{sum(s["completeness"]=="COMPLETE" for s in bench_cells)}/{len(bench_cells)} benchmark cells; {sum(s["completeness"]=="COMPLETE" for s in macro_cells)}/{len(macro_cells)} per-domain macro summaries')
 pred_ok = sum(r['status'] == 'VERIFIED' for r in rows)
 chk('every manifest entry has an archived, verified prediction file (no missing, no failed)', pred_ok == len(ents) == len(rows), f'{pred_ok} verified of {len(ents)} entries')
 # 2 seeds
@@ -53,7 +53,7 @@ chk('public prediction files derive from the files the independent reference sco
 # 5 LaTeX recomputed from the independent reference (statistics module), exact string comparison, no paper values
 def cell(vals, pristine):
     return f'{vals[0]:.2f}' if pristine else f'${statistics.mean(vals):.2f} \\pm {statistics.stdev(vals):.2f}$'
-tex = (PKG / 'results/table1.tex').read_text(); trows = {}
+tex = (PKG / 'results/table2.tex').read_text(); trows = {}
 for m_ in re.finditer(r'^(\dB) & ([^&]+?) & (.*?) \\\\$', tex, re.M): trows[('Qwen3.5-' + m_.group(1), m_.group(2).strip())] = [c.strip() for c in m_.group(3).split('&')]
 bad = []; n_cells = 0
 for sz in OFFICIAL_SIZES:
@@ -65,7 +65,7 @@ for sz in OFFICIAL_SIZES:
         got = trows.get((sz, me)); n_cells += len(exp)
         if got != exp: bad.append((sz, me))
 chk('LaTeX table: every cell equals mean ± sample SD recomputed from the independent reference', not bad and n_cells == exp_cells, f'{n_cells} cells compared, rows differing: {bad}')
-chk('LaTeX/CSV/manifest/results contain no baseline other than the four official methods', not re.search(r'EvoKD-Adapted-v|EvoKD-v|evokd_v', tex + (PKG / 'results/table1_summary.csv').read_text() + (PKG / 'results/table1_per_run.csv').read_text() + (PKG / 'manifests/table1_manifest.json').read_text()))
+chk('LaTeX/CSV/manifest/results contain no baseline other than the four official methods', not re.search(r'EvoKD-Adapted-v|EvoKD-v|evokd_v', tex + (PKG / 'results/table2_summary.csv').read_text() + (PKG / 'results/table2_per_run.csv').read_text() + (PKG / 'manifests/table2_manifest.json').read_text()))
 # 6 naming hygiene (public-facing files); documented exceptions: archive/, data/provenance/, tools/, this validator
 pat = re.compile(r'EvoKD-Adapted-v[12]|EvoKD-v[12]|evokd_v[12]|EvoKD-Adapted v[12]|EvoKD v[12]')
 offenders = []
@@ -74,7 +74,7 @@ for p in list(PKG.glob('*.md')) + list(PKG.glob('docs/*.md')) + list(PKG.glob('m
     if pat.search(p.read_text(errors='ignore')): offenders.append(p.relative_to(PKG).as_posix())
 chk('no versioned EvoKD identifiers in README, docs, CLI, results (exceptions: provenance/)', not offenders, str(offenders))
 # 7 hygiene
-man_txt = (PKG / 'manifests/table1_manifest.json').read_text(); code_txt = ''.join(p.read_text() for p in list(PKG.glob('mapsteal_repro/*.py')) + list(PKG.glob('*.sh')))
+man_txt = (PKG / 'manifests/table2_manifest.json').read_text(); code_txt = ''.join(p.read_text() for p in list(PKG.glob('mapsteal_repro/*.py')) + list(PKG.glob('*.sh')))
 chk('manifest and runtime code (mapsteal_repro/, run.sh) contain no absolute machine paths', '/home/' not in man_txt and '/Users/' not in man_txt and '/home/' not in code_txt)
 chk('no secrets in package text files', not any(re.search(r'sk-[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{12,}', p.read_text(errors='ignore')) for p in PKG.rglob('*') if p.is_file() and p.suffix in ('.py', '.md', '.sh', '.json', '.yml', '.txt', '.tex', '.csv') and '.git' not in p.parts and p.stat().st_size < 3_000_000))
 # 8 tamper test

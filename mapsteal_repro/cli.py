@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Unified entry point (called by run.sh).
-Modes: aggregate (A: archived predictions -> Table 1; CPU), train (B: frozen acquisition data -> train + evaluate; GPU, no Teacher),
+Modes: aggregate (A: archived predictions -> Table 2; CPU), train (B: frozen acquisition data -> train + evaluate; GPU, no Teacher),
        full (C: acquisition + train + evaluate; GPU + Teacher API). Expensive modes only PRINT a plan unless --execute is given AND confirmed."""
 import argparse, collections, hashlib, json, os, subprocess, sys
 from pathlib import Path
@@ -12,7 +12,7 @@ def build_parser():
     ap.add_argument('--all', action='store_true', help='select every student/domain/method')
     ap.add_argument('--student', choices=W.SIZES, help='select one student scale'); ap.add_argument('--domain', choices=list(DOMS)); ap.add_argument('--method', choices=list(W.METHODS)); ap.add_argument('--seed', type=int, choices=W.SEEDS, help='restrict to one formal seed')
     ap.add_argument('--mode', choices=['aggregate', 'train', 'full'], default=None, help='aggregate (A, default), train (B), full (C)')
-    ap.add_argument('--quiet', action='store_true', help='with --aggregate-only: compact output instead of the formatted tables'); ap.add_argument('--aggregate-only', action='store_true', help='Mode A only: rebuild Table 1 from archived predictions (no GPU, no Teacher)')
+    ap.add_argument('--quiet', action='store_true', help='with --aggregate-only: compact output instead of the formatted tables'); ap.add_argument('--aggregate-only', action='store_true', help='Mode A only: rebuild Table 2 from archived predictions (no GPU, no Teacher)')
     ap.add_argument('--eval-only', action='store_true', help='with --mode train: run only the evaluation commands on adapters you supply (see README); skips acquisition/training')
     ap.add_argument('--list', action='store_true', help='print the status matrix (VERIFIED / AVAILABLE_BUT_UNTESTED / UNSUPPORTED) and exit')
     ap.add_argument('--check', action='store_true', help='verify every selected command points to existing code and (Mode B) a hash-verified frozen corpus; executes nothing')

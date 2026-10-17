@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Mode A: rebuild Table 1 from archived per-item predictions. No GPU, no Teacher, no training. stdlib only.
-Reads manifests/table1_manifest.json, data/gold/*.json, data/predictions/**. Never reads any previously rounded Table 1 value.
+"""Mode A: rebuild Table 2 from archived per-item predictions. No GPU, no Teacher, no training. stdlib only.
+Reads manifests/table2_manifest.json, data/gold/*.json, data/predictions/**. Never reads any previously rounded Table 2 value.
 Scoring rule (frozen evaluator protocol): a prediction is correct iff its option letter equals the frozen gold letter (or is in gold_set); accuracy = correct / frozen n.
 A run/benchmark is VERIFIED only if: item-id set == frozen panel minus frozen exclusions (no missing, duplicated or unexpected ids), prediction letters are allowed option letters,
 the gold stored in the prediction row equals the frozen gold, and the stored `correct` flag (if present) agrees. Otherwise no accuracy is produced (never scored as wrong).
@@ -47,7 +47,7 @@ def score(entry, gold, root):
     else: row['status'] = 'FAILED_CHECKS'
     return row
 def run(root=PKG):
-    man = json.loads((root / 'manifests/table1_manifest.json').read_text()); gold = load_gold(root)
+    man = json.loads((root / 'manifests/table2_manifest.json').read_text()); gold = load_gold(root)
     for e in man['entries']: e['method'] = method_label(e['method'])
     rows = [score(e, gold, root) for e in man['entries']]
     cells = {}; per_run = collections.defaultdict(dict)
@@ -87,10 +87,10 @@ def gold_check():
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0]); ap.add_argument('--out', default=str(PKG / 'results')); ap.add_argument('--quiet', action='store_true', help='compact output (counts and paths only)'); a = ap.parse_args(argv); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     gold_check()
-    man, rows, runs, summary = run(); write_csv(out / 'table1_per_run.csv', runs); write_csv(out / 'table1_summary.csv', summary); (out / 'table1.tex').write_text(latex(summary, man))
+    man, rows, runs, summary = run(); write_csv(out / 'table2_per_run.csv', runs); write_csv(out / 'table2_summary.csv', summary); (out / 'table2.tex').write_text(latex(summary, man))
     c = collections.Counter(s['completeness'] for s in summary); st = collections.Counter(r['status'] for r in rows)
     if a.quiet:
         print('prediction files:', dict(st)); print('table cells:', dict(c)); print('wrote', out); return 0
     from .display import render   # presentation only; falls back to plain text when `rich` is not installed
-    render(PKG, rows, summary, out, [out / 'table1.tex', out / 'table1_summary.csv', out / 'table1_per_run.csv']); return 0
+    render(PKG, rows, summary, out, [out / 'table2.tex', out / 'table2_summary.csv', out / 'table2_per_run.csv']); return 0
 if __name__ == '__main__': sys.exit(main())

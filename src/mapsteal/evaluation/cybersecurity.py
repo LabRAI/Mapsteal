@@ -1,4 +1,4 @@
-"""Frozen Cybersecurity evaluation of Table 1: CyberMetric (2,500 rows; cybermetric:1729 is excluded from every reported accuracy), SecEval (1,521), CTI-Bench (2,482).
+"""Frozen Cybersecurity evaluation of Table 2: CyberMetric (2,500 rows; cybermetric:1729 is excluded from every reported accuracy), SecEval (1,521), CTI-Bench (2,482).
 Zero-shot lettered prompt, next-token option-letter argmax (TransformersScorer, batch size 1, max_length 8192, bf16, no chain of thought) as in the formal evaluation.
 All rows are scored and written; the reported accuracy excludes the frozen exclusion. Panels are NOT shipped (supply the three files under their original names, sha256-checked)."""
 from __future__ import annotations
@@ -37,6 +37,6 @@ def evaluate(checkpoint, student, panels_dir, output, benchmarks=('cybermetric',
         (out / f'{b}.jsonl').write_text(''.join(json.dumps(x, ensure_ascii=False, sort_keys=True) + '\n' for x in res))
         kept = [x for x in res if x['item_id'] not in EXCLUDE.get(b, set())]; nc = sum(x['correct'] for x in kept); full = not limit or limit >= PANELS[b][2]
         summary['benchmarks'][b] = {'n_scored': len(res), 'n_reported': len(kept), 'n_correct': nc, 'accuracy_pct': 100 * nc / len(kept), 'excluded_item_ids': sorted(EXCLUDE.get(b, set())), 'panel_sha256': PANELS[b][1],
-                                    'coverage': 'full frozen panel' if full else f'SUBSET: first {limit} items (smoke test, not comparable to Table 1)'}
+                                    'coverage': 'full frozen panel' if full else f'SUBSET: first {limit} items (smoke test, not comparable to Table 2)'}
         print(b, summary['benchmarks'][b], flush=True)
     summary['seconds'] = round(time.time() - t0, 1); summary['torch'] = torch.__version__; (out / 'evaluation.json').write_text(json.dumps(summary, indent=1)); return summary

@@ -37,7 +37,7 @@ def evokd(size, dom, seed, mode):
     loop = f'{PY} -m baselines evokd run --domain {d} --student {size} --out {run} --events 63 --seed {seed} --budget-usd 1.5 --execute   # real GPT-4.1 Teacher calls + GPU online training'
     acq = [loop, f'{PY} -m baselines.evokd.trajectory_stats {run}', _ev(d, size, f'{run}/states/final/adapter', f'{run}/evaluation')]
     return dict(train=[], env='src', corpus=None, acquisition=acq, mode_b='UNSUPPORTED', mode_c='AVAILABLE_BUT_UNTESTED', root=True,
-                note_b='online continual adaptation interleaves Student-dependent Identify/generation with training; it cannot be replayed from the frozen QA alone. Retraining a fresh adapter on the archived QA would be a different experiment, not Table 1.',
+                note_b='online continual adaptation interleaves Student-dependent Identify/generation with training; it cannot be replayed from the frozen QA alone. Retraining a fresh adapter on the archived QA would be a different experiment, not Table 2.',
                 note_c=f'a fresh end-to-end run draws NEW Teacher outputs (new independent trajectory). CPU dry run of the exact schedule: python -m baselines evokd run --domain {d} --student {size} --out DIR --dry-run (tested). Archived run records: archive/provenance/evokd/runs. GPU path not rerun after porting.')
 def pristine(size, dom, seed, mode):
     d = 'medicine' if dom == 'medicine' else 'cybersecurity'

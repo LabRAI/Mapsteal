@@ -8,7 +8,7 @@ def skip(name, need):
 def chk(name, cond, detail=''):
     global ok_all; ok_all &= bool(cond); L.append(f"| {name} | {'PASS' if cond else 'FAIL'} | {detail} |")
 sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
-man = json.loads((PKG / 'manifests/table1_manifest.json').read_text())
+man = json.loads((PKG / 'manifests/table2_manifest.json').read_text())
 # 1 ported baseline files equal the recorded hashes
 mig = json.loads((PKG / 'manifests/baseline_source_map.json').read_text())['files']; badm = [f['new'] for f in mig if sha(PKG / f['new']) != f['new_sha256']]
 chk('ported baseline files equal the hashes recorded in manifests/baseline_source_map.json (original sha256 + exact edits per file)', not badm and all('original_sha256' in f for f in mig), f'{len(mig)} files, {len(badm)} differ: {badm[:3]}')
@@ -65,6 +65,6 @@ if (PKG / 'data/gold/medqa.json').is_file():
     r = subprocess.run(['bash', str(PKG / 'run.sh'), '--aggregate-only', '--out', tempfile.mkdtemp()], capture_output=True, text=True); chk('run.sh --aggregate-only', r.returncode == 0 and 'COMPLETE' in r.stdout, r.stdout.strip().replace('\n', ' | ')[:200])
 else:
     r = subprocess.run(['bash', str(PKG / 'run.sh'), '--aggregate-only', '--out', tempfile.mkdtemp()], capture_output=True, text=True); chk('run.sh --aggregate-only explains how to build the gold labels when they are absent', r.returncode != 0 and 'prepare_benchmarks' in (r.stderr + r.stdout))
-    skip('run.sh --aggregate-only (Table 1 reconstruction)', 'data/gold (python tools/prepare_benchmarks.py)')
+    skip('run.sh --aggregate-only (Table 2 reconstruction)', 'data/gold (python tools/prepare_benchmarks.py)')
 rep = '# Implementation / launcher validation (CPU only)\n\n| check | result | detail |\n|---|---|---|\n' + '\n'.join(L) + f'\n\n**Overall: {"NO FAILURE" if ok_all else "FAILURES PRESENT"} ({N_SKIP} checks skipped because their input data are not distributed)**\n\nNot tested here (no GPU / Teacher / model weights / external benchmark data in this environment): every Mode B and Mode C workflow itself.\n'
 (PKG / 'validation/IMPLEMENTATION_CHECK.md').write_text(rep); print(rep); sys.exit(0 if ok_all else 1)

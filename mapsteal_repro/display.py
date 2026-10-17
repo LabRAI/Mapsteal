@@ -1,4 +1,4 @@
-"""Presentation-only terminal rendering of the already-computed Table 1 aggregation (no recomputation, no file output).
+"""Presentation-only terminal rendering of the already-computed Table 2 aggregation (no recomputation, no file output).
 Uses `rich` when installed; otherwise a plain-text fallback. `rich` is optional: CPU-only aggregation never requires it."""
 import re, shutil, sys
 from pathlib import Path
@@ -38,7 +38,7 @@ def _validation_status(pkg, c):
 def render(pkg, rows, summ, out, files):
     S = {(s['method'], s['student'], s['domain'], s['benchmark']): s for s in summ}; c = _counts(rows, summ); integrity, last = _validation_status(pkg, c)
     summary = [('Prediction files', f"{c['files_ok']}/{c['files']} {'VERIFIED' if c['files_ok'] == c['files'] else 'VERIFIED (some failed or missing)'}"),
-               ('Table 1 benchmark cells', f"{c['cells_ok']}/{c['cells']} {'COMPLETE' if c['cells_ok'] == c['cells'] else 'COMPLETE (some missing)'}"),
+               ('Table 2 benchmark cells', f"{c['cells_ok']}/{c['cells']} {'COMPLETE' if c['cells_ok'] == c['cells'] else 'COMPLETE (some missing)'}"),
                ('Domain macro summaries', f"{c['macro_ok']}/{c['macros']} {'COMPLETE' if c['macro_ok'] == c['macros'] else 'COMPLETE (some missing)'}"),
                ('Aggregation integrity checks', integrity), ('Last full validation', last)] + [('Output files', (str(Path(files[0]).parent.relative_to(pkg)) if Path(files[0]).parent.is_relative_to(pkg) else str(Path(files[0]).parent)) + '/  (' + ', '.join(Path(f).name for f in files) + ')')]
     if _have_rich(): _render_rich(S, summary)

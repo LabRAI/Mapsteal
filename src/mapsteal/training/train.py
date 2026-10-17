@@ -1,4 +1,4 @@
-"""Fresh LoRA adaptation of a pristine Student on a MapSteal corpus (selected training configuration of Table 1; manifest fields as in the archived training manifests).
+"""Fresh LoRA adaptation of a pristine Student on a MapSteal corpus (selected training configuration of Table 2; manifest fields as in the archived training manifests).
 `train` trains and saves the LoRA adapter; `verify_adapter` reloads it and checks trainable-parameter count and loss."""
 from __future__ import annotations
 import hashlib, json, math, shutil, time
