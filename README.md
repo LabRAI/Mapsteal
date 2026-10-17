@@ -2,6 +2,10 @@
 
 MapSteal acquires domain knowledge from a Teacher LLM without looking at the Student: it expands a small set of root questions into a tree of knowledge states (one Teacher request per QA record, fixed admission rules), trains a pristine Qwen3.5 Student on the resulting corpus with a fresh LoRA, and evaluates it zero-shot on multiple-choice benchmarks (Medicine: MedMCQA, MedQA, MedXpertQA-Text; Cybersecurity: CyberMetric, SecEval, CTI-Bench). This repository contains the implementation, the baselines of the paper's Table 2 (QEDKS-Adapted, EvoKD-Adapted, Pristine), the archived Student predictions, and the scripts to recompute Table 2. Method details: [docs/METHODS.md](docs/METHODS.md); full commands and settings: [docs/REPRODUCTION_GUIDE.md](docs/REPRODUCTION_GUIDE.md).
 
+<p align="center"><img src="docs/figures/overview.png" alt="Overview of MapSteal" width="100%"></p>
+
+*Figure 1: Overview of MapSteal. Frozen domain roots initialize a structured acquisition map. Root-level FAIR scheduling selects pending states; a deterministic realizer converts non-root states into questions. A black-box teacher returns an answer, explanation, and typed child-state proposals in one successful interaction. Admitted children re-enter the frontier, while collected QA supervision is used to adapt the student only after acquisition. Map edges indicate acquisition provenance rather than verified domain relations.*
+
 ## Installation
 Python ≥ 3.9.
 ```bash
